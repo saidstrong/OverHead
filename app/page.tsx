@@ -1,5 +1,4 @@
 import { ArrowDownRight, ArrowUpRight, MapPin, Music2, Ticket } from 'lucide-react';
-import Image from 'next/image';
 
 const events = [
   {
@@ -29,7 +28,7 @@ export default function Home() {
         <div className="hero-noise" aria-hidden="true" />
         <header className="site-header">
           <a className="brand" href="#top" aria-label="Overhead home">
-            <Image src="/overhead-mark.png" alt="" className="brand-mark" width={26} height={26} />
+            <img src="/overhead-mark.png" alt="" className="brand-mark" />
             <span>OVERHEAD</span>
           </a>
           <nav aria-label="Main navigation">
@@ -67,7 +66,7 @@ export default function Home() {
         </div>
 
         <div className="hero-stamp" aria-label="Overhead Astana live music bar">
-          <Image src="/overhead-mark.png" alt="" width={160} height={160} />
+          <img src="/overhead-mark.png" alt="" />
           <span>LIVE / LOUD / LATE</span>
         </div>
 
@@ -156,7 +155,7 @@ export default function Home() {
 
       <footer>
         <a className="brand" href="#top" aria-label="Back to top">
-          <Image src="/overhead-mark.png" alt="" className="brand-mark" width={26} height={26} />
+          <img src="/overhead-mark.png" alt="" className="brand-mark" />
           <span>OVERHEAD</span>
         </a>
         <span>ASTANA · KZ</span>
