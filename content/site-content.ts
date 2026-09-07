@@ -41,7 +41,7 @@ export const copy = {
   },
   hero: {
     eyebrow: 'ASTANA · LIVE MUSIC · BAR',
-    title: ['TURN IT', 'UP.'],
+    title: ['OVERHEAD', 'TURN IT UP.'],
     description:
       'Live sets, cold drinks and the people who stay until the last song.',
     primaryAction: 'What is on tonight?',

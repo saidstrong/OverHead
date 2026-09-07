@@ -1,7 +1,7 @@
-/* oxlint-disable next/no-img-element -- Vinext's Next Image shim currently fails at runtime; this small local mark has explicit CSS dimensions. */
 import { Headphones, Music2 } from 'lucide-react';
 import { copy } from '@/content/site-content';
 import { ActionLink } from '@/components/site/action-link';
+import { CocktailVisual } from '@/components/site/cocktail-visual';
 import { QuickActions } from '@/components/site/quick-actions';
 import { SiteHeader } from '@/components/site/site-header';
 
@@ -35,17 +35,24 @@ export function HeroSection() {
 
         <div
           className="hero-visual"
-          aria-label="Overhead live music and bar identity"
+          aria-label="Overhead bar and live music identity"
           data-hero-visual
         >
+          <span className="hero-visual__index" aria-hidden="true">
+            01 / STEEL
+          </span>
           <div className="hero-visual__orbit" aria-hidden="true" />
-          <img src="/overhead-mark.png" alt="Overhead guitar-head logo" />
+          <CocktailVisual variant="hero" />
           <div className="hero-visual__label hero-visual__label--music">
             <Music2 aria-hidden="true" size={15} /> LIVE
           </div>
           <div className="hero-visual__label hero-visual__label--bar">
             <Headphones aria-hidden="true" size={15} /> LOUD
           </div>
+          <p className="hero-visual__caption" aria-hidden="true">
+            THE BAR
+            <span>BEFORE THE STAGE</span>
+          </p>
         </div>
       </div>
 

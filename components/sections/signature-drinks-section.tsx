@@ -1,5 +1,6 @@
 import { copy, signatureDrinks } from '@/content/site-content';
 import { ActionLink } from '@/components/site/action-link';
+import { CocktailVisual } from '@/components/site/cocktail-visual';
 
 export function SignatureDrinksSection() {
   return (
@@ -8,31 +9,60 @@ export function SignatureDrinksSection() {
       id="drinks"
       aria-labelledby="drinks-title"
     >
-      <div className="drinks-copy" data-reveal>
-        <p className="eyebrow">{copy.drinks.eyebrow}</p>
-        <h2 id="drinks-title">{copy.drinks.title}</h2>
-        <p>{copy.drinks.body}</p>
-        <ActionLink href="#menu" variant="dark" direction="down">
-          Open the menu
-        </ActionLink>
+      <div className="drinks-intro">
+        <div className="drinks-copy" data-reveal>
+          <p className="eyebrow">{copy.drinks.eyebrow}</p>
+          <h2 id="drinks-title">{copy.drinks.title}</h2>
+          <p>{copy.drinks.body}</p>
+          <ActionLink href="#menu" variant="dark" direction="down">
+            Open the menu
+          </ActionLink>
+        </div>
+        <div className="drinks-material-note" data-reveal aria-hidden="true">
+          <span>01</span>
+          <p>STEEL / ICE / LIQUOR</p>
+          <i />
+          <small>ONE PHYSICAL SEQUENCE</small>
+        </div>
       </div>
 
       <div
-        className="pour-stage"
-        data-bar-light
-        aria-label="Reserved visual stage for the signature cocktail sequence"
+        className="cocktail-story"
+        data-cocktail-story
+        aria-label="A Boston shaker becomes the Motörhead signature cocktail"
       >
-        <p className="pour-stage__kicker">SIGNATURE SEQUENCE</p>
-        <div className="pour-stage__steps" aria-hidden="true">
-          <span>SHAKE</span>
-          <span>TILT</span>
-          <span>POUR</span>
-          <span>REVEAL</span>
+        <div className="cocktail-story__sticky" data-bar-light>
+          <div className="cocktail-story__topline" aria-hidden="true">
+            <span>OVERHEAD BAR / 01</span>
+            <span>SHAKE → POUR → SETTLE</span>
+          </div>
+
+          <div className="cocktail-story__words" aria-hidden="true">
+            <span data-shake-word>SHAKE.</span>
+            <span data-pour-word>POUR.</span>
+          </div>
+
+          <div className="cocktail-story__object">
+            <CocktailVisual />
+          </div>
+
+          <div className="cocktail-editorial" data-cocktail-copy>
+            <p>01 / HOUSE SIGNATURE</p>
+            <h3>{signatureDrinks[0].name}</h3>
+            <div>
+              <span>RECIPE + PRICE</span>
+              <strong>Awaiting final menu</strong>
+            </div>
+            <a href="#menu">EXPLORE ALL DRINKS ↘</a>
+          </div>
+
+          <div className="cocktail-story__progress" aria-hidden="true">
+            <span data-story-step="active">01</span>
+            <span>02</span>
+            <span>03</span>
+            <span>04</span>
+          </div>
         </div>
-        <div className="pour-stage__reflection" aria-hidden="true" />
-        <p className="pour-stage__note">
-          Artwork layer ready for a realistic shaker and glass study
-        </p>
       </div>
 
       <ol className="drink-list">
@@ -40,7 +70,7 @@ export function SignatureDrinksSection() {
           <li key={drink.name} data-reveal>
             <span>{drink.number}</span>
             <strong>{drink.name}</strong>
-            <small>Signature recipe · details pending confirmation</small>
+            <small>House signature · final recipe and price pending</small>
           </li>
         ))}
       </ol>

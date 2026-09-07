@@ -19,10 +19,18 @@ export function EventsSection() {
       />
 
       <div className="events-grid">
-        {events.map((event) => (
-          <article className="event-card" key={event.id} data-reveal>
+        {events.map((event, index) => (
+          <article
+            className="event-card"
+            key={event.id}
+            data-event-card
+            data-reveal
+          >
             <EventPoster event={event} compact />
             <div className="event-card__content">
+              <span className="event-card__index" aria-hidden="true">
+                0{index + 1}
+              </span>
               <div className="event-card__topline">
                 <span>{event.status}</span>
                 <time dateTime={event.isoDate}>{event.date}</time>
