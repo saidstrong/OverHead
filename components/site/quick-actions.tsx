@@ -17,7 +17,7 @@ export function QuickActions() {
     <nav
       className="quick-actions"
       id="quick-actions"
-      aria-label="Quick actions"
+      aria-label="Быстрая навигация"
     >
       {actions.map(({ label, href, Icon, external }) => (
         <a

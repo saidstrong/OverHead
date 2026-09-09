@@ -1,6 +1,6 @@
-import { copy, signatureDrinks } from '@/content/site-content';
+import { copy } from '@/content/site-content';
+import { signatureDrinks, formatPrice } from '@/content/overhead-menu';
 import { ActionLink } from '@/components/site/action-link';
-import { BarExperience } from '@/components/scene/bar-experience';
 
 export function SignatureDrinksSection() {
   return (
@@ -15,23 +15,26 @@ export function SignatureDrinksSection() {
           <h2 id="drinks-title">{copy.drinks.title}</h2>
           <p>{copy.drinks.body}</p>
           <ActionLink href="#menu" variant="dark" direction="down">
-            Open the menu
+            Открыть меню
           </ActionLink>
         </div>
         <div className="drinks-material-note" data-reveal aria-hidden="true">
           <span>01</span>
-          <p>STEEL / ICE / AMBER</p>
+          <p>СТАЛЬ / ЛЁД / ЯНТАРЬ</p>
           <i />
-          <small>THE ART OF THE EVENING</small>
+          <small>ИСКУССТВО ВЕЧЕРА</small>
         </div>
       </div>
-      <BarExperience />
-      <ol className="drink-list" id="bar-after">
-        {signatureDrinks.map((drink) => (
+      <ol className="drink-list">
+        {signatureDrinks.map((drink, index) => (
           <li key={drink.name} data-reveal>
-            <span>{drink.number}</span>
+            <span>{String(index + 1).padStart(2, '0')}</span>
             <strong>{drink.name}</strong>
-            <small>House signature · final recipe and price pending</small>
+            <small>
+              {drink.description}
+              <br />
+              {drink.volume} · {formatPrice(drink.price)}
+            </small>
           </li>
         ))}
       </ol>

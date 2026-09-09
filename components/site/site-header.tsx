@@ -5,12 +5,12 @@ import { copy, links } from '@/content/site-content';
 export function SiteHeader() {
   return (
     <header className="site-header">
-      <a className="brand" href="#top" aria-label="Overhead home">
+      <a className="brand" href="#top" aria-label="OVERHEAD — на главную">
         <img src="/overhead-mark.png" alt="" className="brand-mark" />
         <span>OVERHEAD</span>
       </a>
 
-      <nav className="desktop-nav" aria-label="Main navigation">
+      <nav className="desktop-nav" aria-label="Основная навигация">
         <a href="#tonight">{copy.nav.tonight}</a>
         <a href="#events">{copy.nav.events}</a>
         <a href="#menu">{copy.nav.menu}</a>
@@ -27,8 +27,8 @@ export function SiteHeader() {
 
       <a
         className="mobile-menu-link"
-        href="#quick-actions"
-        aria-label="Open quick links"
+        href="#menu"
+        aria-label="Открыть меню бара"
       >
         <MenuIcon aria-hidden="true" size={22} />
       </a>

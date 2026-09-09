@@ -16,15 +16,6 @@ export interface VenueEvent {
   artworkTone: 'rust' | 'violet';
 }
 
-export interface MenuCategory {
-  id: string;
-  label: string;
-  note: string;
-  priceRange?: string;
-  items: string[];
-  verification: VerificationStatus;
-}
-
 export const links = {
   instagram: 'https://www.instagram.com/overhead.club',
   directions:
@@ -33,47 +24,46 @@ export const links = {
 
 export const copy = {
   nav: {
-    tonight: 'Tonight',
-    events: 'Events',
-    menu: 'Menu',
-    visit: 'Visit',
-    reserve: 'Reserve',
+    tonight: 'Сегодня',
+    events: 'События',
+    menu: 'Меню',
+    visit: 'Как нас найти',
+    reserve: 'Бронь',
   },
   hero: {
-    eyebrow: 'ASTANA · LIVE MUSIC · BAR',
-    title: ['OVERHEAD', 'TURN IT UP.'],
+    eyebrow: 'АСТАНА · ЖИВАЯ МУЗЫКА · БАР',
+    title: ['OVERHEAD', 'ГРОМЧЕ.'],
     description:
-      'Live sets, cold drinks and the people who stay until the last song.',
-    primaryAction: 'What is on tonight?',
-    menuAction: 'Explore the bar',
+      'Живые сеты, холодные напитки и люди, которые остаются до последней песни.',
+    primaryAction: 'Что сегодня?',
+    menuAction: 'Посмотреть бар',
   },
   tonight: {
-    eyebrow: 'NEXT AT OVERHEAD',
-    title: 'THE NEXT REASON TO GO OUT.',
+    eyebrow: 'БЛИЖАЙШЕЕ В OVERHEAD',
+    title: 'СЛЕДУЮЩИЙ ПОВОД ВЫЙТИ ИЗ ДОМА.',
   },
   drinks: {
-    eyebrow: 'SIGNATURE DRINKS',
-    title: 'THE BAR HAS A SOUND OF ITS OWN.',
-    body: 'Band-named cocktails connect the drinks menu to the stage. The final recipes and prices remain replaceable content, while the experience is built to last.',
+    eyebrow: 'ФИРМЕННЫЕ КОКТЕЙЛИ',
+    title: 'У БАРА ЕСТЬ СВОЁ ЗВУЧАНИЕ.',
+    body: 'Motörhead, Nirvana, Oasis, The Beatles. Любимые имена — по другую сторону барной стойки.',
   },
   events: {
-    eyebrow: 'ON STAGE',
-    title: 'UPCOMING NOISE.',
-    intro: 'Dates, essential details and the shortest path to a ticket.',
+    eyebrow: 'НА СЦЕНЕ',
+    title: 'СКОРО БУДЕТ ГРОМКО.',
+    intro: 'Выбирай концерт. Увидимся у сцены.',
   },
   menu: {
-    eyebrow: 'AT THE BAR',
-    title: 'DRINK. EAT. STAY.',
-    intro:
-      'A mobile-readable menu structure ready for confirmed products and prices.',
+    eyebrow: 'В БАРЕ',
+    title: 'ПЕЙ. ЕШЬ. ОСТАВАЙСЯ.',
+    intro: 'От первого коктейля до последнего сета.',
   },
   atmosphere: {
-    eyebrow: 'THE ROOM',
-    title: 'CLOSE TO THE STAGE. PART OF THE NIGHT.',
+    eyebrow: 'ЗАЛ',
+    title: 'БЛИЖЕ К СЦЕНЕ. ЧАСТЬ НОЧИ.',
   },
   visit: {
-    eyebrow: 'VISIT OVERHEAD',
-    title: 'FIND THE NOISE.',
+    eyebrow: 'OVERHEAD',
+    title: 'ИДИ НА ЗВУК.',
   },
 } as const;
 
@@ -81,12 +71,12 @@ export const events: VenueEvent[] = [
   {
     id: 'avtosport-2026',
     isoDate: '2026-09-18T18:00:00+06:00',
-    date: '18 SEP',
+    date: '18 СЕН',
     title: 'Автоспорт',
-    subtitle: 'with special guests Shié + jüzw',
+    subtitle: 'Специальные гости: Shié + jüzw',
     time: '18:00',
     age: '16+',
-    price: 'from 9,000 ₸',
+    price: 'от 9 000 ₸',
     ticketUrl: 'https://ticketon.kz/kz/concerts/event/tckt2-avtosport-astana',
     status: 'upcoming',
     verification: 'verified-public',
@@ -95,12 +85,12 @@ export const events: VenueEvent[] = [
   {
     id: 'durnoy-vkus-2026',
     isoDate: '2026-10-03T19:00:00+06:00',
-    date: '03 OCT',
+    date: '03 ОКТ',
     title: 'ДУРНОЙ ВКУС',
-    subtitle: 'first time in Astana',
+    subtitle: 'Впервые в Астане',
     time: '19:00',
     age: '16+',
-    price: 'from 15,000 ₸',
+    price: 'от 15 000 ₸',
     ticketUrl: 'https://ticketon.kz/kz/concerts/event/tckt2-durnoy-vkus-astana',
     status: 'upcoming',
     verification: 'verified-public',
@@ -108,60 +98,16 @@ export const events: VenueEvent[] = [
   },
 ];
 
-export const signatureDrinks = [
-  { name: 'Motörhead', number: '01' },
-  { name: 'Nirvana', number: '02' },
-  { name: 'Oasis', number: '03' },
-] as const;
-
-export const menuCategories: MenuCategory[] = [
-  {
-    id: 'signature',
-    label: 'Signature cocktails',
-    note: 'Band-named house drinks',
-    priceRange: '2,500–3,200 ₸ shown previously',
-    items: ['Motörhead', 'Nirvana', 'Oasis', 'The Beatles'],
-    verification: 'provisional',
-  },
-  {
-    id: 'cocktails',
-    label: 'Cocktails',
-    note: 'Classic and house selection',
-    priceRange: 'Current prices awaiting confirmation',
-    items: ['Full cocktail list', 'Alcohol-free options'],
-    verification: 'provisional',
-  },
-  {
-    id: 'beer',
-    label: 'Beer',
-    note: 'Draft and bottled',
-    priceRange: '1,500–2,100 ₸ shown previously',
-    items: ['Draft beer · 500 ml', 'Bottled selection', 'Alcohol-free beer'],
-    verification: 'provisional',
-  },
-  {
-    id: 'spirits',
-    label: 'Spirits',
-    note: 'Infusions and spirits',
-    priceRange: 'House infusions previously shown at 1,100 ₸',
-    items: ['House infusions · 50 ml', 'Full spirits list pending'],
-    verification: 'provisional',
-  },
-  {
-    id: 'food',
-    label: 'Food / snacks',
-    note: 'Built for a full evening',
-    priceRange: '1,000–2,000 ₸ shown previously',
-    items: ['Hot dogs', 'Ramen', 'Fries', 'Sharing snacks'],
-    verification: 'provisional',
-  },
-];
-
 export const visit = {
-  address: 'Korgalzhyn Highway 13/1, Astana, Kazakhstan',
-  hours: null,
-  phone: null,
+  address: ['Коргалжынское шоссе, 13/1', '3 этаж', 'Астана'],
+  hours: [
+    { day: 'Понедельник', opens: '18:00', closes: '00:00' },
+    { day: 'Вторник', opens: '18:00', closes: '00:00' },
+    { day: 'Среда', opens: '18:00', closes: '00:00' },
+    { day: 'Четверг', opens: '18:00', closes: '02:00' },
+    { day: 'Пятница', opens: '18:00', closes: '05:00' },
+    { day: 'Суббота', opens: '18:00', closes: '05:00' },
+    { day: 'Воскресенье', opens: '18:00', closes: '02:00' },
+  ],
   reservationUrl: links.instagram,
-  verificationNote:
-    'Opening hours, phone and reservation method are awaiting owner confirmation.',
 };

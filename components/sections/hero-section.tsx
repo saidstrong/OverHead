@@ -1,8 +1,6 @@
-import { Headphones, Music2 } from 'lucide-react';
+/* oxlint-disable next/no-img-element -- Existing local brand artwork; Vinext image shim is not used. */
 import { copy } from '@/content/site-content';
 import { ActionLink } from '@/components/site/action-link';
-import { CocktailVisual } from '@/components/site/cocktail-visual';
-import { QuickActions } from '@/components/site/quick-actions';
 import { SiteHeader } from '@/components/site/site-header';
 
 export function HeroSection() {
@@ -33,30 +31,15 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div
-          className="hero-visual"
-          aria-label="Overhead bar and live music identity"
-          data-hero-visual
-        >
-          <span className="hero-visual__index" aria-hidden="true">
-            01 / STEEL
-          </span>
-          <div className="hero-visual__orbit" aria-hidden="true" />
-          <CocktailVisual variant="hero" />
-          <div className="hero-visual__label hero-visual__label--music">
-            <Music2 aria-hidden="true" size={15} /> LIVE
-          </div>
-          <div className="hero-visual__label hero-visual__label--bar">
-            <Headphones aria-hidden="true" size={15} /> LOUD
-          </div>
-          <p className="hero-visual__caption" aria-hidden="true">
-            THE BAR
-            <span>BEFORE THE STAGE</span>
-          </p>
+        <div className="hero-visual hero-brand-art" data-hero-visual>
+          <img
+            src="/overhead-mark.png"
+            alt="Фирменный знак OVERHEAD — гриф гитары"
+            width={1080}
+            height={1080}
+          />
         </div>
       </div>
-
-      <QuickActions />
     </section>
   );
 }

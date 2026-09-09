@@ -18,7 +18,7 @@ export function TonightSection() {
         <h2 id="tonight-title">{copy.tonight.title}</h2>
         <span className="status-chip">
           <span aria-hidden="true" />{' '}
-          {isTonight ? 'Tonight' : 'Upcoming · not tonight'}
+          {isTonight ? 'Сегодня' : 'Ближайшее · не сегодня'}
         </span>
       </div>
 
@@ -33,27 +33,27 @@ export function TonightSection() {
           <dl>
             <div>
               <dt>
-                <Clock3 aria-hidden="true" size={15} /> Start
+                <Clock3 aria-hidden="true" size={15} /> Начало
               </dt>
               <dd>{featured.time}</dd>
             </div>
             <div>
               <dt>
-                <Ticket aria-hidden="true" size={15} /> Entry
+                <Ticket aria-hidden="true" size={15} /> Билеты
               </dt>
               <dd>{featured.price}</dd>
             </div>
           </dl>
           <div className="featured-event__actions">
             <ActionLink href={featured.ticketUrl} external>
-              Buy tickets
+              Купить билет
             </ActionLink>
             <ActionLink href="#events" variant="outline" direction="down">
-              All events
+              Все события
             </ActionLink>
           </div>
           <p className="source-note">
-            Published event details · Ticketon link opens in a new tab
+            Билеты на Ticketon · откроется в новой вкладке
           </p>
         </div>
       </div>

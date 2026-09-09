@@ -1,43 +1,31 @@
 .bar-scroll {
   position: relative;
+  width: 100%;
   height: auto;
-  margin: clamp(36px, 6vw, 80px) auto 0;
-  max-width: 1440px;
+  margin: 0;
+  max-width: none;
+  background: #101414;
 }
 .bar-scroll[data-scene-ready='true']:not([data-reduced-motion='true']) {
   height: 440svh;
 }
 .bar-experience {
   position: sticky;
-  top: 24px;
+  top: 0;
+  width: 100%;
   background: #101414;
-  color: #e8e3d7;
-  border: 1px solid #4c4a3f;
   overflow: hidden;
   isolation: isolate;
-}
-.bar-experience__masthead {
-  position: absolute;
-  inset: 0 0 auto;
-  z-index: 3;
-  display: flex;
-  justify-content: space-between;
-  gap: 16px;
-  padding: 24px 32px;
-  pointer-events: none;
-  font-size: 9px;
-  letter-spacing: 0.17em;
-  color: #bab3a2;
 }
 .bar-experience__viewport {
   position: relative;
   overflow: hidden;
   margin: 0;
-  height: min(730px, calc(100svh - 124px));
-  min-height: 320px;
+  height: calc(100svh - var(--mobile-nav-height, 0px));
+  height: calc(100dvh - var(--mobile-nav-height, 0px));
+  min-height: 280px;
 }
-.bar-experience__viewport
-  > div:not(.bar-experience__caption):not(.bar-experience__vignette) {
+.bar-experience__viewport > div:not(.bar-experience__vignette) {
   position: absolute !important;
   inset: 0;
 }
@@ -48,17 +36,9 @@
 .bar-experience__viewport > div:not(.hybrid-layers):has(canvas) {
   z-index: 1;
 }
-/* Reveal the decoded plate set and WebGL together, never one loaded plate alone. */
 [data-scene-ready='false'] .hybrid-layers,
 [data-scene-ready='false'] .bar-experience__viewport > div:has(canvas) {
   opacity: 0;
-}
-.bar-experience__caption,
-.bar-experience__vignette {
-  z-index: 3;
-}
-.bar-experience__viewport .bar-experience__next {
-  z-index: 4;
 }
 .bar-experience__fallback {
   position: absolute;
@@ -70,6 +50,7 @@
 .bar-experience__vignette {
   position: absolute;
   inset: 0;
+  z-index: 3;
   pointer-events: none;
   background: linear-gradient(
     0deg,
@@ -79,153 +60,22 @@
     #0a101055
   );
 }
-.bar-experience__caption {
+/* Keyboard/screen-reader skip, absent from the normal visual composition. */
+.ritual-skip {
   position: absolute;
-  left: 6%;
-  top: 43%;
-  max-width: 29%;
+  z-index: 4;
+  top: max(16px, env(safe-area-inset-top, 0px));
+  right: 16px;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  opacity: 0;
   pointer-events: none;
+  background: #11100f;
+  color: #f1eee5;
 }
-.bar-experience__caption > span {
-  font-size: 9px;
-  letter-spacing: 0.18em;
-  color: #c1ab83;
-}
-.bar-experience__caption h3 {
-  margin: 10px 0 7px;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(32px, 4vw, 58px);
-  font-weight: 400;
-  letter-spacing: -0.035em;
-  line-height: 1.05;
-}
-.bar-experience__caption p {
-  margin: 0;
-  font-size: 12px;
-  color: #bdb8ac;
-}
-/* Action chapters read as brief editorial plates, not repeated marketing cards. */
-.bar-experience__caption:is(
-    [data-chapter='1'],
-    [data-chapter='2'],
-    [data-chapter='3']
-  )
-  p {
-  display: none;
-}
-.bar-experience__caption[data-chapter='3'] h3 {
-  font-style: italic;
-}
-.bar-experience__next {
-  position: absolute;
-  bottom: 34px;
-  right: 32px;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  min-height: 44px;
-  font-size: 11px;
-  color: #e4d0a5;
-  text-decoration: none;
-  border-bottom: 1px solid #7a6d53;
-}
-.bar-experience__scroll-note {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 0 24px;
-  min-height: 48px;
-  border-top: 1px solid #ffffff14;
-  font-size: 9px;
-  letter-spacing: 0.12em;
-  color: #bdb8ac;
-}
-.bar-experience__scroll-note a {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-height: 48px;
-  color: #e4d0a5;
-  letter-spacing: 0.02em;
-}
-.bar-experience__progress {
-  position: absolute;
-  height: 2px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: #bba273;
-  transform: scaleX(0);
-  transform-origin: left;
-}
-.bar-experience :focus-visible {
-  outline: 2px solid #d6ff32;
-  outline-offset: 3px;
-}
-.bar-scroll[data-reduced-motion='true'],
-.bar-scroll[data-scene-failed='true'] {
-  height: auto;
-}
-.bar-scroll[data-reduced-motion='true'] .bar-experience,
-.bar-scroll[data-scene-failed='true'] .bar-experience {
-  position: relative;
-  top: auto;
-}
-@media (prefers-reduced-motion: reduce) {
-  .bar-scroll {
-    height: auto;
-  }
-  .bar-experience {
-    position: relative;
-    top: auto;
-  }
-}
-@media (max-width: 600px) {
-  .bar-scroll {
-    margin-inline: 0;
-  }
-  .bar-scroll[data-scene-ready='true']:not([data-reduced-motion='true']) {
-    height: 420svh;
-  }
-  .bar-experience__viewport {
-    height: calc(100svh - 156px);
-    max-height: 700px;
-  }
-  .bar-experience__masthead {
-    padding: 20px;
-    font-size: 8px;
-    letter-spacing: 0.1em;
-  }
-  .bar-experience__masthead span:last-child {
-    max-width: 110px;
-    text-align: right;
-    line-height: 1.5;
-  }
-  .bar-experience__caption {
-    left: 20px;
-    top: auto;
-    bottom: 24px;
-    max-width: calc(100% - 154px);
-  }
-  .bar-experience__caption h3 {
-    font-size: 25px;
-  }
-  .bar-experience__caption p {
-    font-size: 10px;
-  }
-  .bar-experience__next {
-    left: auto;
-    right: 20px;
-    bottom: 24px;
-    max-width: 110px;
-    font-size: 10px;
-  }
-  .bar-experience__scroll-note {
-    padding-inline: 16px;
-    font-size: 8px;
-    letter-spacing: 0.07em;
-  }
+.ritual-skip:focus-visible {
+  opacity: 1;
+  pointer-events: auto;
 }

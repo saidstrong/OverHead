@@ -1,7 +1,6 @@
-import { AtSign, Clock3, MapPin, MessageCircle, Phone } from 'lucide-react';
+import { AtSign, Clock3, MapPin, MessageCircle } from 'lucide-react';
 import { copy, links, visit } from '@/content/site-content';
 import { ActionLink } from '@/components/site/action-link';
-
 export function VisitSection() {
   return (
     <section className="visit-section" id="visit" aria-labelledby="visit-title">
@@ -10,45 +9,59 @@ export function VisitSection() {
         <h2 id="visit-title">{copy.visit.title}</h2>
         <p className="visit-address">
           <MapPin aria-hidden="true" size={20} strokeWidth={2.1} />
-          <span>{visit.address}</span>
+          <span>
+            {visit.address.map((line) => (
+              <span className="address-line" key={line}>
+                {line}
+              </span>
+            ))}
+          </span>
         </p>
         <div className="visit-actions">
           <ActionLink href={links.directions} external>
-            Directions in 2GIS
+            Маршрут в 2ГИС
           </ActionLink>
           <ActionLink
             href={visit.reservationUrl}
             external
             variant="outline"
-            ariaLabel="Ask Overhead about reservations on Instagram"
+            ariaLabel="Забронировать стол в OVERHEAD через Instagram"
           >
-            Ask to reserve
+            Забронировать
           </ActionLink>
         </div>
       </div>
-
       <dl className="visit-details" data-reveal>
         <div>
           <dt>
-            <Clock3 aria-hidden="true" size={17} /> Opening hours
+            <Clock3 aria-hidden="true" size={17} /> Часы работы
           </dt>
-          <dd>{visit.hours ?? 'Awaiting confirmation'}</dd>
+          <dd>
+            <dl className="opening-hours">
+              {visit.hours.map(({ day, opens, closes }) => (
+                <div key={day}>
+                  <dt>{day}</dt>
+                  <dd>
+                    {opens}–{closes}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </dd>
         </div>
         <div>
           <dt>
-            <Phone aria-hidden="true" size={17} /> Phone
+            <MessageCircle aria-hidden="true" size={17} /> Бронь
           </dt>
-          <dd>{visit.phone ?? 'Awaiting confirmation'}</dd>
+          <dd>
+            <a href={visit.reservationUrl} target="_blank" rel="noreferrer">
+              Напишите нам в Instagram
+            </a>
+          </dd>
         </div>
         <div>
           <dt>
-            <MessageCircle aria-hidden="true" size={17} /> Reservations
-          </dt>
-          <dd>Ask the venue directly</dd>
-        </div>
-        <div>
-          <dt>
-            <AtSign aria-hidden="true" size={17} /> Instagram
+            <AtSign aria-hidden="true" size={17} /> Мы на связи
           </dt>
           <dd>
             <a href={links.instagram} target="_blank" rel="noreferrer">
@@ -56,7 +69,6 @@ export function VisitSection() {
             </a>
           </dd>
         </div>
-        <p>{visit.verificationNote}</p>
       </dl>
     </section>
   );

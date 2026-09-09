@@ -10,13 +10,11 @@ import './hybrid-layers.css';
 function Plate({
   source,
   placeholder,
-  label,
   onReady,
   onError,
 }: {
   source: PlateSource | null;
   placeholder: string;
-  label: string;
   onReady: () => void;
   onError: () => void;
 }) {
@@ -51,13 +49,26 @@ function Plate({
             decoding="async"
             onLoad={async (event) => {
               const img = event.currentTarget;
+              const decodingSource = img.currentSrc;
               try {
                 await img.decode();
-                if (!img.isConnected) return;
+                if (
+                  !img.isConnected ||
+                  img.currentSrc !== decodingSource ||
+                  !img.complete
+                )
+                  return;
                 setReady(true);
                 onReady();
               } catch {
-                if (img.isConnected) onError();
+                // A responsive source change can cancel an older decode. The
+                // replacement's load event owns readiness; it is not a failure.
+                if (
+                  img.isConnected &&
+                  img.currentSrc === decodingSource &&
+                  img.complete
+                )
+                  onError();
               }
             }}
             onError={() => {
@@ -67,13 +78,6 @@ function Plate({
             }}
           />
         </picture>
-      )}
-      {!ready && (
-        <span className="hybrid-asset-label">
-          {label}
-          <br />
-          {failed ? 'Asset unavailable' : 'Placeholder · artwork pending'}
-        </span>
       )}
     </div>
   );
@@ -107,7 +111,6 @@ export function HybridLayers({
         <Plate
           source={hybridAssets.stage}
           placeholder="/media/overhead/stage-placeholder.svg"
-          label="LIVE STAGE PLATE"
           onReady={() => plateReady('stage')}
           onError={onError}
         />
@@ -118,7 +121,6 @@ export function HybridLayers({
           <Plate
             source={hybridAssets.prepared}
             placeholder="/media/overhead/prepared-placeholder.svg"
-            label="RECEIVING GLASS"
             onReady={() => plateReady('prepared')}
             onError={onError}
           />
@@ -127,7 +129,6 @@ export function HybridLayers({
           <Plate
             source={hybridAssets.served}
             placeholder="/media/overhead/served-placeholder.svg"
-            label="RENDERED COCKTAIL"
             onReady={() => plateReady('served')}
             onError={onError}
           />

@@ -8,6 +8,7 @@ export function EventsSection() {
     <section
       className="events-section"
       id="events"
+      tabIndex={-1}
       aria-labelledby="events-title"
     >
       <SectionHeading
@@ -32,7 +33,7 @@ export function EventsSection() {
                 0{index + 1}
               </span>
               <div className="event-card__topline">
-                <span>{event.status}</span>
+                <span>{event.status === 'tonight' ? 'Сегодня' : 'Скоро'}</span>
                 <time dateTime={event.isoDate}>{event.date}</time>
               </div>
               <h3>{event.title}</h3>
@@ -40,13 +41,13 @@ export function EventsSection() {
               <dl>
                 <div>
                   <dt>
-                    <Clock3 aria-hidden="true" size={14} /> Start
+                    <Clock3 aria-hidden="true" size={14} /> Начало
                   </dt>
                   <dd>{event.time}</dd>
                 </div>
                 <div>
                   <dt>
-                    <Ticket aria-hidden="true" size={14} /> Tickets
+                    <Ticket aria-hidden="true" size={14} /> Билеты
                   </dt>
                   <dd>{event.price}</dd>
                 </div>
@@ -55,9 +56,9 @@ export function EventsSection() {
                 href={event.ticketUrl}
                 target="_blank"
                 rel="noreferrer"
-                aria-label={`Buy tickets for ${event.title}`}
+                aria-label={`Купить билет на ${event.title}`}
               >
-                GET TICKETS <ArrowUpRight aria-hidden="true" size={18} />
+                КУПИТЬ БИЛЕТ <ArrowUpRight aria-hidden="true" size={18} />
               </a>
             </div>
           </article>

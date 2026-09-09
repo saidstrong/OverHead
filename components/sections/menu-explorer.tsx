@@ -1,32 +1,41 @@
 'use client';
-
 import { useRef, useState } from 'react';
-import { ArrowUpRight } from 'lucide-react';
-import { menuCategories } from '@/content/site-content';
-
+import { menuCategories, formatPrice } from '@/content/overhead-menu';
 export function MenuExplorer() {
   const [activeId, setActiveId] = useState(menuCategories[0].id);
   const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const activeCategory =
     menuCategories.find((category) => category.id === activeId) ??
     menuCategories[0];
-
   const selectTab = (index: number) => {
-    const category = menuCategories[index];
-    setActiveId(category.id);
-    tabRefs.current[index]?.focus();
+    setActiveId(menuCategories[index].id);
+    const tab = tabRefs.current[index];
+    tab?.focus({ preventScroll: true });
+    if (tab?.parentElement) {
+      const rail = tab.parentElement;
+      rail.scrollTo({
+        left:
+          rail.scrollLeft +
+          tab.getBoundingClientRect().left -
+          rail.getBoundingClientRect().left -
+          (rail.clientWidth - tab.clientWidth) / 2,
+        behavior: 'instant',
+      });
+    }
   };
-
   return (
     <div className="menu-explorer">
-      <div className="menu-tabs" role="tablist" aria-label="Menu categories">
-        {menuCategories.map((category) => (
+      <p className="menu-swipe-hint" aria-hidden="true">
+        Категории <span>Листайте →</span>
+      </p>
+      <div className="menu-tabs" role="tablist" aria-label="Категории меню">
+        {menuCategories.map((category, index) => (
           <button
             className="menu-tab"
             key={category.id}
             id={`menu-tab-${category.id}`}
             ref={(element) => {
-              tabRefs.current[menuCategories.indexOf(category)] = element;
+              tabRefs.current[index] = element;
             }}
             type="button"
             role="tab"
@@ -34,24 +43,22 @@ export function MenuExplorer() {
             aria-controls={`menu-panel-${category.id}`}
             tabIndex={activeId === category.id ? 0 : -1}
             data-active={activeId === category.id ? '' : undefined}
-            onClick={() => setActiveId(category.id)}
+            onClick={() => selectTab(index)}
             onKeyDown={(event) => {
-              const currentIndex = menuCategories.indexOf(category);
-              if (event.key === 'ArrowRight') {
+              const next =
+                event.key === 'ArrowRight'
+                  ? (index + 1) % menuCategories.length
+                  : event.key === 'ArrowLeft'
+                    ? (index - 1 + menuCategories.length) %
+                      menuCategories.length
+                    : event.key === 'Home'
+                      ? 0
+                      : event.key === 'End'
+                        ? menuCategories.length - 1
+                        : null;
+              if (next !== null) {
                 event.preventDefault();
-                selectTab((currentIndex + 1) % menuCategories.length);
-              } else if (event.key === 'ArrowLeft') {
-                event.preventDefault();
-                selectTab(
-                  (currentIndex - 1 + menuCategories.length) %
-                    menuCategories.length,
-                );
-              } else if (event.key === 'Home') {
-                event.preventDefault();
-                selectTab(0);
-              } else if (event.key === 'End') {
-                event.preventDefault();
-                selectTab(menuCategories.length - 1);
+                selectTab(next);
               }
             }}
           >
@@ -59,31 +66,38 @@ export function MenuExplorer() {
           </button>
         ))}
       </div>
-
-      <div
-        className="menu-panel"
-        id={`menu-panel-${activeCategory.id}`}
-        role="tabpanel"
-        aria-labelledby={`menu-tab-${activeCategory.id}`}
-      >
-        <div>
-          <p className="menu-panel__label">{activeCategory.note}</p>
-          <h3>{activeCategory.label}</h3>
-          <p className="menu-panel__price">{activeCategory.priceRange}</p>
-          <span className="verification-tag">
-            Awaiting current menu confirmation
-          </span>
+      {menuCategories.map((category) => (
+        <div
+          key={category.id}
+          className="menu-panel"
+          id={`menu-panel-${category.id}`}
+          role="tabpanel"
+          hidden={category.id !== activeCategory.id}
+          aria-labelledby={`menu-tab-${category.id}`}
+          tabIndex={0}
+        >
+          {category.id === activeCategory.id &&
+            category.groups.map((group) => (
+              <div className="menu-group" key={group.label}>
+                <h3>{group.label}</h3>
+                <ul>
+                  {group.items.map((item) => (
+                    <li key={item.name}>
+                      <div className="menu-item-copy">
+                        <strong>{item.name}</strong>
+                        {item.description && <p>{item.description}</p>}
+                        {item.volume && <small>{item.volume}</small>}
+                      </div>
+                      <span className="menu-item-price">
+                        {formatPrice(item.price)}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
         </div>
-        <ol>
-          {activeCategory.items.map((item, index) => (
-            <li key={item}>
-              <span>{String(index + 1).padStart(2, '0')}</span>
-              <strong>{item}</strong>
-              <ArrowUpRight aria-hidden="true" size={17} />
-            </li>
-          ))}
-        </ol>
-      </div>
+      ))}
     </div>
   );
 }

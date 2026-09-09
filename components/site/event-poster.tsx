@@ -12,9 +12,9 @@ export function EventPoster({
     <div
       className={`event-poster event-poster--${event.artworkTone} ${compact ? 'event-poster--compact' : ''}`}
       role="img"
-      aria-label={`Typographic event artwork for ${event.title}`}
+      aria-label={`Афиша: ${event.title}`}
     >
-      <span className="event-poster__venue">OVERHEAD / ASTANA</span>
+      <span className="event-poster__venue">OVERHEAD / АСТАНА</span>
       <strong>{event.title}</strong>
       <span className="event-poster__date">
         {event.date} · {event.time}

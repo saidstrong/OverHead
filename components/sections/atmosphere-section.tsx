@@ -1,24 +1,6 @@
-import { Camera } from 'lucide-react';
-import { copy } from '@/content/site-content';
-
-const frames = [
-  {
-    label: 'Live floor',
-    detail: 'Performances / audience',
-    className: 'atmosphere-frame--live',
-  },
-  {
-    label: 'At the bar',
-    detail: 'Bartenders / cocktails',
-    className: 'atmosphere-frame--bar',
-  },
-  {
-    label: 'Terrace',
-    detail: 'Open-air nights',
-    className: 'atmosphere-frame--terrace',
-  },
-];
-
+/* oxlint-disable next/no-img-element -- Approved pre-optimized local artwork uses responsive picture sources in Vinext. */
+import { copy, links } from '@/content/site-content';
+import { ActionLink } from '@/components/site/action-link';
 export function AtmosphereSection() {
   return (
     <section
@@ -30,29 +12,32 @@ export function AtmosphereSection() {
         <p className="eyebrow">{copy.atmosphere.eyebrow}</p>
         <h2 id="atmosphere-title">{copy.atmosphere.title}</h2>
         <p>
-          The final gallery is designed around real Overhead photography. These
-          frames reserve the composition without presenting invented venue
-          imagery.
+          Музыка, ради которой выходят из дома. Вечера, которые не хочется
+          заканчивать.
         </p>
+        <ActionLink href={links.instagram} external variant="dark">
+          Жизнь OVERHEAD
+        </ActionLink>
       </div>
-
-      <div className="atmosphere-composition">
-        {frames.map((frame, index) => (
-          <div
-            className={`atmosphere-frame ${frame.className}`}
-            key={frame.label}
-            data-reveal
-          >
-            <span>{String(index + 1).padStart(2, '0')}</span>
-            <div>
-              <Camera aria-hidden="true" size={18} />
-              <strong>{frame.label}</strong>
-              <small>{frame.detail}</small>
-            </div>
-            <em>PHOTOGRAPHY PENDING PERMISSION</em>
-          </div>
-        ))}
-      </div>
+      <figure className="room-artwork" data-reveal>
+        <picture>
+          <source
+            media="(max-width: 600px)"
+            srcSet="/media/overhead/overhead-stage-mobile.webp"
+          />
+          <img
+            src="/media/overhead/overhead-stage-desktop.webp"
+            alt="Атмосферическая иллюстрация: музыканты в тёплом сценическом свете"
+            width={1920}
+            height={1080}
+            loading="lazy"
+            decoding="async"
+          />
+        </picture>
+        <figcaption>
+          Визуальный образ вечера · атмосферическая иллюстрация
+        </figcaption>
+      </figure>
     </section>
   );
 }

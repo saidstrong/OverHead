@@ -6,6 +6,7 @@ import { SignatureDrinksSection } from '@/components/sections/signature-drinks-s
 import { SiteFooter } from '@/components/sections/site-footer';
 import { TonightSection } from '@/components/sections/tonight-section';
 import { VisitSection } from '@/components/sections/visit-section';
+import { BarExperience } from '@/components/scene/bar-experience';
 import { HomeMotion } from '@/components/motion/home-motion';
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <HeroSection />
       <TonightSection />
       <SignatureDrinksSection />
+      <BarExperience />
       <EventsSection />
       <MenuSection />
       <AtmosphereSection />
