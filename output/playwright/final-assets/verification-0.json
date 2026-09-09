@@ -1,0 +1,159 @@
+{
+  "states": [
+    {
+      "width": 1440,
+      "target": 16,
+      "actual": "15.98"
+    },
+    {
+      "width": 1440,
+      "target": 12.3,
+      "actual": "12.31"
+    },
+    {
+      "width": 1440,
+      "target": 8.7,
+      "actual": "8.71"
+    },
+    {
+      "width": 1440,
+      "target": 6.1,
+      "actual": "6.12"
+    },
+    {
+      "width": 1440,
+      "target": 3,
+      "actual": "3.02"
+    },
+    {
+      "width": 1440,
+      "target": 0,
+      "actual": "0.02"
+    },
+    {
+      "width": 375,
+      "target": 16,
+      "actual": "15.98"
+    },
+    {
+      "width": 375,
+      "target": 12.3,
+      "actual": "12.32"
+    },
+    {
+      "width": 375,
+      "target": 8.7,
+      "actual": "8.72"
+    },
+    {
+      "width": 375,
+      "target": 6.1,
+      "actual": "6.12"
+    },
+    {
+      "width": 375,
+      "target": 3,
+      "actual": "3.02"
+    },
+    {
+      "width": 375,
+      "target": 0,
+      "actual": "0.02"
+    },
+    {
+      "width": 390,
+      "target": 16,
+      "actual": "15.98"
+    },
+    {
+      "width": 390,
+      "target": 12.3,
+      "actual": "12.31"
+    },
+    {
+      "width": 390,
+      "target": 8.7,
+      "actual": "8.72"
+    },
+    {
+      "width": 390,
+      "target": 6.1,
+      "actual": "6.12"
+    },
+    {
+      "width": 390,
+      "target": 3,
+      "actual": "3.02"
+    },
+    {
+      "width": 390,
+      "target": 0,
+      "actual": "0.02"
+    },
+    {
+      "width": 430,
+      "target": 16,
+      "actual": "15.99"
+    },
+    {
+      "width": 430,
+      "target": 12.3,
+      "actual": "12.31"
+    },
+    {
+      "width": 430,
+      "target": 8.7,
+      "actual": "8.72"
+    },
+    {
+      "width": 430,
+      "target": 6.1,
+      "actual": "6.12"
+    },
+    {
+      "width": 430,
+      "target": 3,
+      "actual": "3.02"
+    },
+    {
+      "width": 430,
+      "target": 0,
+      "actual": "0.02"
+    }
+  ],
+  "reduced": [
+    {
+      "width": 1440,
+      "time": "12.30",
+      "reduced": "true",
+      "height": 781,
+      "panel": 781,
+      "overflow": false
+    },
+    {
+      "width": 375,
+      "time": "12.30",
+      "reduced": "true",
+      "height": 739,
+      "panel": 739,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "time": "12.30",
+      "reduced": "true",
+      "height": 739,
+      "panel": 739,
+      "overflow": false
+    },
+    {
+      "width": 430,
+      "time": "12.30",
+      "reduced": "true",
+      "height": 739,
+      "panel": 739,
+      "overflow": false
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,10 @@
+async(page)=>{
+ const samples=[];
+ for(const width of [375,1440]){
+  const probe=await page.context().newPage();await probe.setViewportSize({width,height:844});const session=await probe.context().newCDPSession(probe);await session.send('Network.enable');await session.send('Network.setCacheDisabled',{cacheDisabled:true});
+  await probe.goto('http://localhost:3000');await probe.evaluate(()=>document.fonts.ready);await probe.waitForTimeout(700);const deferred=await probe.evaluate(()=>!performance.getEntriesByType('resource').some(r=>r.name.includes('/media/overhead/')));
+  await probe.locator('[data-bar-experience]').evaluate(el=>el.scrollIntoView({block:'start',behavior:'instant'}));await probe.locator('[data-scene-ready="true"]').waitFor({state:'attached'});
+  samples.push({width,deferred,...await probe.evaluate(()=>({resources:performance.getEntriesByType('resource').filter(r=>r.name.includes('/media/overhead/')).map(r=>({file:r.name.split('/').pop(),encoded:r.encodedBodySize,transfer:r.transferSize,duration:r.duration})),images:[...document.querySelectorAll('.hybrid-plate picture img')].map(i=>i.currentSrc)}))});await probe.close();
+ }
+ return samples;
+}

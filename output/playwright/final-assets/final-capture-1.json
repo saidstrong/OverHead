@@ -1,0 +1,75 @@
+{
+  "states": [
+    {
+      "width": 1440,
+      "name": "pour-setup",
+      "time": "6.70"
+    },
+    {
+      "width": 1440,
+      "name": "fill-late",
+      "time": "9.90"
+    },
+    {
+      "width": 1440,
+      "name": "handoff",
+      "time": "10.30"
+    },
+    {
+      "width": 1440,
+      "name": "tools-recede",
+      "time": "11.20"
+    },
+    {
+      "width": 1440,
+      "name": "rack-start",
+      "time": "13.70"
+    },
+    {
+      "width": 1440,
+      "name": "rack-middle",
+      "time": "14.50"
+    },
+    {
+      "width": 1440,
+      "name": "rack-end",
+      "time": "15.30"
+    },
+    {
+      "width": 390,
+      "name": "pour-setup",
+      "time": "6.70"
+    },
+    {
+      "width": 390,
+      "name": "fill-late",
+      "time": "9.90"
+    },
+    {
+      "width": 390,
+      "name": "handoff",
+      "time": "10.30"
+    },
+    {
+      "width": 390,
+      "name": "tools-recede",
+      "time": "11.20"
+    },
+    {
+      "width": 390,
+      "name": "rack-start",
+      "time": "13.70"
+    },
+    {
+      "width": 390,
+      "name": "rack-middle",
+      "time": "14.50"
+    },
+    {
+      "width": 390,
+      "name": "rack-end",
+      "time": "15.30"
+    }
+  ],
+  "errors": []
+}

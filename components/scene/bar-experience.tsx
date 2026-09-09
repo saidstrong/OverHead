@@ -14,6 +14,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ArrowDown, ArrowUpRight } from 'lucide-react';
 import { SceneFallback } from './scene-fallback';
+import { HybridLayers } from './hybrid-layers';
 import './bar-experience.css';
 
 const BarCanvas = lazy(() => import('./bar-canvas'));
@@ -54,10 +55,13 @@ class SceneBoundary extends Component<
 export function BarExperience() {
   const container = useRef<HTMLDivElement>(null);
   const progress = useRef<HTMLDivElement>(null);
+  const composite = useRef<HTMLDivElement>(null);
   const seek = useRef<((time: number, still?: boolean) => void) | null>(null);
   const [near, setNear] = useState(false);
   const [reduced, setReduced] = useState(false);
-  const [ready, setReady] = useState(false);
+  const [canvasReady, setCanvasReady] = useState(false);
+  const [artworkReady, setArtworkReady] = useState(false);
+  const ready = canvasReady && artworkReady;
   const [failed, setFailed] = useState(false);
   const [chapter, setChapter] = useState(0);
   const current = chapters[reduced ? 5 : chapter];
@@ -86,13 +90,14 @@ export function BarExperience() {
   const onReady = useCallback(
     (render: (time: number, still?: boolean) => void) => {
       seek.current = render;
-      setReady(true);
+      setCanvasReady(true);
     },
     [],
   );
+  const onArtworkReady = useCallback(() => setArtworkReady(true), []);
   const onError = useCallback(() => {
     setFailed(true);
-    setReady(false);
+    setCanvasReady(false);
   }, []);
 
   useEffect(() => {
@@ -167,9 +172,20 @@ export function BarExperience() {
         >
           {(!ready || failed) && <SceneFallback />}
           {near && !failed && (
+            <HybridLayers
+              composite={composite}
+              onReady={onArtworkReady}
+              onError={onError}
+            />
+          )}
+          {near && !failed && (
             <SceneBoundary onError={onError}>
               <Suspense fallback={null}>
-                <BarCanvas onReady={onReady} onError={onError} />
+                <BarCanvas
+                  onReady={onReady}
+                  onError={onError}
+                  composite={composite}
+                />
               </Suspense>
             </SceneBoundary>
           )}

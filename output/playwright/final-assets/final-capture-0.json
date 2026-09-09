@@ -1,0 +1,203 @@
+{
+  "states": [
+    {
+      "width": 1440,
+      "name": "initial",
+      "time": "0.00",
+      "overflow": false,
+      "calls": "12",
+      "triangles": "14414"
+    },
+    {
+      "width": 1440,
+      "name": "shake",
+      "time": "3.00",
+      "overflow": false,
+      "calls": "12",
+      "triangles": "14414"
+    },
+    {
+      "width": 1440,
+      "name": "separation",
+      "time": "6.10",
+      "overflow": false,
+      "calls": "12",
+      "triangles": "14414"
+    },
+    {
+      "width": 1440,
+      "name": "pour",
+      "time": "8.70",
+      "overflow": false,
+      "calls": "8",
+      "triangles": "8094"
+    },
+    {
+      "width": 1440,
+      "name": "served",
+      "time": "12.30",
+      "overflow": false,
+      "calls": "2",
+      "triangles": "14"
+    },
+    {
+      "width": 1440,
+      "name": "music",
+      "time": "16.00",
+      "overflow": false,
+      "calls": "2",
+      "triangles": "14"
+    },
+    {
+      "width": 375,
+      "name": "initial",
+      "time": "0.00",
+      "overflow": false,
+      "calls": "12",
+      "triangles": "14414"
+    },
+    {
+      "width": 375,
+      "name": "shake",
+      "time": "3.00",
+      "overflow": false,
+      "calls": "12",
+      "triangles": "14414"
+    },
+    {
+      "width": 375,
+      "name": "separation",
+      "time": "6.10",
+      "overflow": false,
+      "calls": "12",
+      "triangles": "14414"
+    },
+    {
+      "width": 375,
+      "name": "pour",
+      "time": "8.70",
+      "overflow": false,
+      "calls": "8",
+      "triangles": "8094"
+    },
+    {
+      "width": 375,
+      "name": "served",
+      "time": "12.30",
+      "overflow": false,
+      "calls": "1",
+      "triangles": "12"
+    },
+    {
+      "width": 375,
+      "name": "music",
+      "time": "16.00",
+      "overflow": false,
+      "calls": "1",
+      "triangles": "12"
+    },
+    {
+      "width": 390,
+      "name": "initial",
+      "time": "0.00",
+      "overflow": false,
+      "calls": "12",
+      "triangles": "14414"
+    },
+    {
+      "width": 390,
+      "name": "shake",
+      "time": "3.00",
+      "overflow": false,
+      "calls": "12",
+      "triangles": "14414"
+    },
+    {
+      "width": 390,
+      "name": "separation",
+      "time": "6.10",
+      "overflow": false,
+      "calls": "12",
+      "triangles": "14414"
+    },
+    {
+      "width": 390,
+      "name": "pour",
+      "time": "8.70",
+      "overflow": false,
+      "calls": "8",
+      "triangles": "8094"
+    },
+    {
+      "width": 390,
+      "name": "served",
+      "time": "12.30",
+      "overflow": false,
+      "calls": "1",
+      "triangles": "12"
+    },
+    {
+      "width": 390,
+      "name": "music",
+      "time": "16.00",
+      "overflow": false,
+      "calls": "1",
+      "triangles": "12"
+    },
+    {
+      "width": 430,
+      "name": "initial",
+      "time": "0.00",
+      "overflow": false,
+      "calls": "12",
+      "triangles": "14414"
+    },
+    {
+      "width": 430,
+      "name": "shake",
+      "time": "3.00",
+      "overflow": false,
+      "calls": "12",
+      "triangles": "14414"
+    },
+    {
+      "width": 430,
+      "name": "separation",
+      "time": "6.10",
+      "overflow": false,
+      "calls": "12",
+      "triangles": "14414"
+    },
+    {
+      "width": 430,
+      "name": "pour",
+      "time": "8.70",
+      "overflow": false,
+      "calls": "8",
+      "triangles": "8094"
+    },
+    {
+      "width": 430,
+      "name": "served",
+      "time": "12.30",
+      "overflow": false,
+      "calls": "1",
+      "triangles": "12"
+    },
+    {
+      "width": 430,
+      "name": "music",
+      "time": "16.00",
+      "overflow": false,
+      "calls": "1",
+      "triangles": "12"
+    }
+  ],
+  "errors": [],
+  "warnings": [
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+    "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+  ]
+}

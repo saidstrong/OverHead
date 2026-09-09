@@ -1,0 +1,1578 @@
+{
+  "result": [
+    {
+      "width": 1440,
+      "deferred": true,
+      "states": [
+        {
+          "time": "7.18",
+          "pair": [
+            {
+              "x": 876.0592651367188,
+              "y": 367.16583251953125,
+              "width": 276.82818603515625,
+              "height": 346.03125,
+              "fit": "contain",
+              "origin": "138.414px 302.777px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-desktop.webp"
+            },
+            {
+              "x": 876.0592651367188,
+              "y": 367.16583251953125,
+              "width": 276.82818603515625,
+              "height": 346.03125,
+              "fit": "contain",
+              "origin": "138.414px 302.777px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-desktop.webp"
+            }
+          ],
+          "prepared": "1",
+          "served": "0",
+          "clip": "75.09888220987888%",
+          "surfaceY": "602.04",
+          "stageBlur": "8px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "8.69",
+          "pair": [
+            {
+              "x": 871.826416015625,
+              "y": 367.2019348144531,
+              "width": 276.609375,
+              "height": 345.7655944824219,
+              "fit": "contain",
+              "origin": "138.305px 302.545px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-desktop.webp"
+            },
+            {
+              "x": 871.826416015625,
+              "y": 367.2019348144531,
+              "width": 276.609375,
+              "height": 345.7655944824219,
+              "fit": "contain",
+              "origin": "138.305px 302.545px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-desktop.webp"
+            }
+          ],
+          "prepared": "1",
+          "served": "1",
+          "clip": "58.68005414404208%",
+          "surfaceY": "545.11",
+          "stageBlur": "8px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "9.89",
+          "pair": [
+            {
+              "x": 871.826416015625,
+              "y": 367.2019348144531,
+              "width": 276.609375,
+              "height": 345.7655944824219,
+              "fit": "contain",
+              "origin": "138.305px 302.545px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-desktop.webp"
+            },
+            {
+              "x": 871.826416015625,
+              "y": 367.2019348144531,
+              "width": 276.609375,
+              "height": 345.7655944824219,
+              "fit": "contain",
+              "origin": "138.305px 302.545px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-desktop.webp"
+            }
+          ],
+          "prepared": "1",
+          "served": "1",
+          "clip": "38.084641626397314%",
+          "surfaceY": "473.89",
+          "stageBlur": "8px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "10.28",
+          "pair": [
+            {
+              "x": 871.826416015625,
+              "y": 367.2019348144531,
+              "width": 276.609375,
+              "height": 345.7655944824219,
+              "fit": "contain",
+              "origin": "138.305px 302.545px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-desktop.webp"
+            },
+            {
+              "x": 871.826416015625,
+              "y": 367.2019348144531,
+              "width": 276.609375,
+              "height": 345.7655944824219,
+              "fit": "contain",
+              "origin": "138.305px 302.545px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-desktop.webp"
+            }
+          ],
+          "prepared": "0.5467990234187523",
+          "served": "1",
+          "clip": "18.747628607811922%",
+          "surfaceY": "460.76",
+          "stageBlur": "8px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "10.68",
+          "pair": [
+            {
+              "x": 871.826416015625,
+              "y": 367.2019348144531,
+              "width": 276.609375,
+              "height": 345.7655944824219,
+              "fit": "contain",
+              "origin": "138.305px 302.545px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-desktop.webp"
+            },
+            {
+              "x": 871.826416015625,
+              "y": 367.2019348144531,
+              "width": 276.609375,
+              "height": 345.7655944824219,
+              "fit": "contain",
+              "origin": "138.305px 302.545px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-desktop.webp"
+            }
+          ],
+          "prepared": "0.0016363062842720266",
+          "served": "1",
+          "clip": "0.0542602791343822%",
+          "surfaceY": "456.86",
+          "stageBlur": "8px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "12.29",
+          "pair": [
+            {
+              "x": 723.7340698242188,
+              "y": -4.052495956420898,
+              "width": 506.32818603515625,
+              "height": 632.90625,
+              "fit": "contain",
+              "origin": "253.164px 553.793px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-desktop.webp"
+            },
+            {
+              "x": 723.7340698242188,
+              "y": -4.052495956420898,
+              "width": 506.32818603515625,
+              "height": 632.90625,
+              "fit": "contain",
+              "origin": "253.164px 553.793px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-desktop.webp"
+            }
+          ],
+          "prepared": "0",
+          "served": "1",
+          "clip": "0%",
+          "surfaceY": "185.36",
+          "stageBlur": "8px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "14.19",
+          "pair": [
+            {
+              "x": 716.8536987304688,
+              "y": 118.16677856445312,
+              "width": 496.06256103515625,
+              "height": 620.078125,
+              "fit": "contain",
+              "origin": "248.031px 542.568px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-desktop.webp"
+            },
+            {
+              "x": 716.8536987304688,
+              "y": 118.16677856445312,
+              "width": 496.06256103515625,
+              "height": 620.078125,
+              "fit": "contain",
+              "origin": "248.031px 542.568px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-desktop.webp"
+            }
+          ],
+          "prepared": "0",
+          "served": "1",
+          "clip": "0%",
+          "surfaceY": "301.90",
+          "stageBlur": "5.101741574198856px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "14.58",
+          "pair": [
+            {
+              "x": 789.6641845703125,
+              "y": 223.21507263183594,
+              "width": 491.8125,
+              "height": 614.765625,
+              "fit": "contain",
+              "origin": "245.906px 537.92px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-desktop.webp"
+            },
+            {
+              "x": 789.6641845703125,
+              "y": 223.21507263183594,
+              "width": 491.8125,
+              "height": 614.765625,
+              "fit": "contain",
+              "origin": "245.906px 537.92px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-desktop.webp"
+            }
+          ],
+          "prepared": "0",
+          "served": "1",
+          "clip": "0%",
+          "surfaceY": "404.54",
+          "stageBlur": "0.005427911090034598px",
+          "drinkBlur": "2.359220342382474px"
+        },
+        {
+          "time": "15.99",
+          "pair": [
+            {
+              "x": 911.95556640625,
+              "y": 335.72222900390625,
+              "width": 489.46875,
+              "height": 611.84375,
+              "fit": "contain",
+              "origin": "244.734px 535.363px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-desktop.webp"
+            },
+            {
+              "x": 911.95556640625,
+              "y": 335.72222900390625,
+              "width": 489.46875,
+              "height": 611.84375,
+              "fit": "contain",
+              "origin": "244.734px 535.363px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-desktop.webp"
+            }
+          ],
+          "prepared": "0",
+          "served": "1",
+          "clip": "0%",
+          "surfaceY": "515.70",
+          "stageBlur": "0px",
+          "drinkBlur": "6px"
+        },
+        {
+          "time": "10.32",
+          "pair": [
+            {
+              "x": 871.826416015625,
+              "y": 367.2019348144531,
+              "width": 276.609375,
+              "height": 345.7655944824219,
+              "fit": "contain",
+              "origin": "138.305px 302.545px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-desktop.webp"
+            },
+            {
+              "x": 871.826416015625,
+              "y": 367.2019348144531,
+              "width": 276.609375,
+              "height": 345.7655944824219,
+              "fit": "contain",
+              "origin": "138.305px 302.545px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-desktop.webp"
+            }
+          ],
+          "prepared": "0.4711842000588946",
+          "served": "1",
+          "clip": "16.035016988619706%",
+          "surfaceY": "459.88",
+          "stageBlur": "8px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "8.72",
+          "pair": [
+            {
+              "x": 871.826416015625,
+              "y": 367.2019348144531,
+              "width": 276.609375,
+              "height": 345.7655944824219,
+              "fit": "contain",
+              "origin": "138.305px 302.545px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-desktop.webp"
+            },
+            {
+              "x": 871.826416015625,
+              "y": 367.2019348144531,
+              "width": 276.609375,
+              "height": 345.7655944824219,
+              "fit": "contain",
+              "origin": "138.305px 302.545px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-desktop.webp"
+            }
+          ],
+          "prepared": "1",
+          "served": "1",
+          "clip": "58.14719157297552%",
+          "surfaceY": "543.26",
+          "stageBlur": "8px",
+          "drinkBlur": "0px"
+        }
+      ],
+      "images": [
+        {
+          "src": "http://localhost:3000/media/overhead/overhead-stage-desktop.webp",
+          "width": 1920,
+          "height": 1080,
+          "complete": true
+        },
+        {
+          "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-desktop.webp",
+          "width": 1200,
+          "height": 1500,
+          "complete": true
+        },
+        {
+          "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-desktop.webp",
+          "width": 1200,
+          "height": 1500,
+          "complete": true
+        }
+      ],
+      "resources": [
+        {
+          "url": "stage-placeholder.svg",
+          "encoded": 356,
+          "transfer": 300,
+          "duration": 2.600000001490116
+        },
+        {
+          "url": "overhead-stage-desktop.webp",
+          "encoded": 188286,
+          "transfer": 300,
+          "duration": 4.199999995529652
+        },
+        {
+          "url": "prepared-placeholder.svg",
+          "encoded": 452,
+          "transfer": 300,
+          "duration": 5.399999998509884
+        },
+        {
+          "url": "overhead-cocktail-prepared-desktop.webp",
+          "encoded": 1447222,
+          "transfer": 300,
+          "duration": 8.100000001490116
+        },
+        {
+          "url": "served-placeholder.svg",
+          "encoded": 453,
+          "transfer": 300,
+          "duration": 7.700000002980232
+        },
+        {
+          "url": "overhead-cocktail-served-desktop.webp",
+          "encoded": 1479094,
+          "transfer": 300,
+          "duration": 12.399999998509884
+        }
+      ],
+      "heap": {
+        "used": 27888797,
+        "total": 44167957
+      }
+    },
+    {
+      "width": 375,
+      "deferred": true,
+      "states": [
+        {
+          "time": "7.18",
+          "pair": [
+            {
+              "x": 154.86880493164062,
+              "y": 329.1695556640625,
+              "width": 226.09375,
+              "height": 282.625,
+              "fit": "contain",
+              "origin": "113.047px 247.297px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 154.86880493164062,
+              "y": 329.1695556640625,
+              "width": 226.09375,
+              "height": 282.625,
+              "fit": "contain",
+              "origin": "113.047px 247.297px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "1",
+          "served": "0",
+          "clip": "75.10378000152711%",
+          "surfaceY": "516.44",
+          "stageBlur": "4px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "8.68",
+          "pair": [
+            {
+              "x": 151.1394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 151.1394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "1",
+          "served": "1",
+          "clip": "58.808971643937305%",
+          "surfaceY": "469.96",
+          "stageBlur": "4px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "9.88",
+          "pair": [
+            {
+              "x": 151.1394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 151.1394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "1",
+          "served": "1",
+          "clip": "38.16270331992259%",
+          "surfaceY": "411.71",
+          "stageBlur": "4px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "10.29",
+          "pair": [
+            {
+              "x": 151.1394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 151.1394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "0.526838529322001",
+          "served": "1",
+          "clip": "18.029304015172354%",
+          "surfaceY": "400.59",
+          "stageBlur": "4px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "10.69",
+          "pair": [
+            {
+              "x": 151.1394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 151.1394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "0.0010272019281437617",
+          "served": "1",
+          "clip": "0.03406786999437429%",
+          "surfaceY": "397.61",
+          "stageBlur": "4px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "12.28",
+          "pair": [
+            {
+              "x": -5.787961483001709,
+              "y": 70.81867980957031,
+              "width": 386.5625,
+              "height": 483.21875,
+              "fit": "contain",
+              "origin": "193.281px 422.816px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": -5.787961483001709,
+              "y": 70.81867980957031,
+              "width": 386.5625,
+              "height": 483.21875,
+              "fit": "contain",
+              "origin": "193.281px 422.816px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "0",
+          "served": "1",
+          "clip": "0%",
+          "surfaceY": "207.82",
+          "stageBlur": "4px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "14.18",
+          "pair": [
+            {
+              "x": 24.672260284423828,
+              "y": 135.61082458496094,
+              "width": 396.078125,
+              "height": 495.109375,
+              "fit": "contain",
+              "origin": "198.039px 433.221px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 24.672260284423828,
+              "y": 135.61082458496094,
+              "width": 396.078125,
+              "height": 495.109375,
+              "fit": "contain",
+              "origin": "198.039px 433.221px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "0",
+          "served": "1",
+          "clip": "0%",
+          "surfaceY": "276.46",
+          "stageBlur": "2.6342305198741816px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "14.58",
+          "pair": [
+            {
+              "x": 110.39984130859375,
+              "y": 220.30630493164062,
+              "width": 411.75,
+              "height": 514.6875,
+              "fit": "contain",
+              "origin": "205.875px 450.352px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 110.39984130859375,
+              "y": 220.30630493164062,
+              "width": 411.75,
+              "height": 514.6875,
+              "fit": "contain",
+              "origin": "205.875px 450.352px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "0",
+          "served": "1",
+          "clip": "0%",
+          "surfaceY": "367.73",
+          "stageBlur": "0.0010431863185833556px",
+          "drinkBlur": "1.1992752058902942px"
+        },
+        {
+          "time": "15.99",
+          "pair": [
+            {
+              "x": 244.30203247070312,
+              "y": 327.928955078125,
+              "width": 432.3905944824219,
+              "height": 540.5,
+              "fit": "contain",
+              "origin": "216.195px 472.938px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 244.30203247070312,
+              "y": 327.928955078125,
+              "width": 432.3905944824219,
+              "height": 540.5,
+              "fit": "contain",
+              "origin": "216.195px 472.938px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "0",
+          "served": "1",
+          "clip": "0%",
+          "surfaceY": "484.52",
+          "stageBlur": "0px",
+          "drinkBlur": "3px"
+        },
+        {
+          "time": "10.31",
+          "pair": [
+            {
+              "x": 151.1394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 151.1394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "0.47900548800000065",
+          "served": "1",
+          "clip": "16.315915451206656%",
+          "surfaceY": "400.14",
+          "stageBlur": "4px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "8.72",
+          "pair": [
+            {
+              "x": 151.1394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 151.1394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "1",
+          "served": "1",
+          "clip": "58.12610478149139%",
+          "surfaceY": "468.03",
+          "stageBlur": "4px",
+          "drinkBlur": "0px"
+        }
+      ],
+      "images": [
+        {
+          "src": "http://localhost:3000/media/overhead/overhead-stage-mobile.webp",
+          "width": 900,
+          "height": 1350,
+          "complete": true
+        },
+        {
+          "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp",
+          "width": 640,
+          "height": 800,
+          "complete": true
+        },
+        {
+          "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp",
+          "width": 640,
+          "height": 800,
+          "complete": true
+        }
+      ],
+      "resources": [
+        {
+          "url": "overhead-stage-desktop.webp",
+          "encoded": 188286,
+          "transfer": 300,
+          "duration": 14.199999995529652
+        },
+        {
+          "url": "overhead-stage-mobile.webp",
+          "encoded": 0,
+          "transfer": 300,
+          "duration": 2.8000000044703484
+        },
+        {
+          "url": "overhead-cocktail-prepared-desktop.webp",
+          "encoded": 1447222,
+          "transfer": 300,
+          "duration": 15.5
+        },
+        {
+          "url": "overhead-cocktail-prepared-mobile.webp",
+          "encoded": 0,
+          "transfer": 300,
+          "duration": 5.200000002980232
+        },
+        {
+          "url": "overhead-cocktail-served-desktop.webp",
+          "encoded": 1479094,
+          "transfer": 300,
+          "duration": 15
+        },
+        {
+          "url": "overhead-cocktail-served-mobile.webp",
+          "encoded": 0,
+          "transfer": 300,
+          "duration": 10.599999994039536
+        },
+        {
+          "url": "stage-placeholder.svg",
+          "encoded": 356,
+          "transfer": 300,
+          "duration": 15.199999995529652
+        },
+        {
+          "url": "prepared-placeholder.svg",
+          "encoded": 452,
+          "transfer": 300,
+          "duration": 18.30000000447035
+        },
+        {
+          "url": "served-placeholder.svg",
+          "encoded": 453,
+          "transfer": 300,
+          "duration": 18.80000000447035
+        }
+      ],
+      "heap": {
+        "used": 49024870,
+        "total": 65262330
+      }
+    },
+    {
+      "width": 390,
+      "deferred": true,
+      "states": [
+        {
+          "time": "7.18",
+          "pair": [
+            {
+              "x": 162.5784454345703,
+              "y": 329.17706298828125,
+              "width": 226.12498474121094,
+              "height": 282.65625,
+              "fit": "contain",
+              "origin": "113.062px 247.324px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 162.5784454345703,
+              "y": 329.17706298828125,
+              "width": 226.12498474121094,
+              "height": 282.65625,
+              "fit": "contain",
+              "origin": "113.062px 247.324px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "1",
+          "served": "0",
+          "clip": "75.10381033042891%",
+          "surfaceY": "516.47",
+          "stageBlur": "4px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "8.68",
+          "pair": [
+            {
+              "x": 158.6394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 158.6394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "1",
+          "served": "1",
+          "clip": "58.78933228051647%",
+          "surfaceY": "469.90",
+          "stageBlur": "4px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "9.88",
+          "pair": [
+            {
+              "x": 158.6394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 158.6394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "1",
+          "served": "1",
+          "clip": "38.27301157354253%",
+          "surfaceY": "412.02",
+          "stageBlur": "4px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "10.29",
+          "pair": [
+            {
+              "x": 158.6394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 158.6394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "0.5267186824324649",
+          "served": "1",
+          "clip": "18.024983819399942%",
+          "surfaceY": "400.59",
+          "stageBlur": "4px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "10.68",
+          "pair": [
+            {
+              "x": 158.6394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 158.6394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "0.0011076391029918309",
+          "served": "1",
+          "clip": "0.03673562512640638%",
+          "surfaceY": "397.61",
+          "stageBlur": "4px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "12.29",
+          "pair": [
+            {
+              "x": 1.712038516998291,
+              "y": 70.81867980957031,
+              "width": 386.5625,
+              "height": 483.21875,
+              "fit": "contain",
+              "origin": "193.281px 422.816px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 1.712038516998291,
+              "y": 70.81867980957031,
+              "width": 386.5625,
+              "height": 483.21875,
+              "fit": "contain",
+              "origin": "193.281px 422.816px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "0",
+          "served": "1",
+          "clip": "0%",
+          "surfaceY": "207.82",
+          "stageBlur": "4px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "14.18",
+          "pair": [
+            {
+              "x": 32.18434524536133,
+              "y": 135.62611389160156,
+              "width": 396.078125,
+              "height": 495.109375,
+              "fit": "contain",
+              "origin": "198.039px 433.221px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 32.18434524536133,
+              "y": 135.62611389160156,
+              "width": 396.078125,
+              "height": 495.109375,
+              "fit": "contain",
+              "origin": "198.039px 433.221px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "0",
+          "served": "1",
+          "clip": "0%",
+          "surfaceY": "276.47",
+          "stageBlur": "2.6336353043119742px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "14.58",
+          "pair": [
+            {
+              "x": 117.89984130859375,
+              "y": 220.30630493164062,
+              "width": 411.75,
+              "height": 514.6875,
+              "fit": "contain",
+              "origin": "205.875px 450.352px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 117.89984130859375,
+              "y": 220.30630493164062,
+              "width": 411.75,
+              "height": 514.6875,
+              "fit": "contain",
+              "origin": "205.875px 450.352px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "0",
+          "served": "1",
+          "clip": "0%",
+          "surfaceY": "367.73",
+          "stageBlur": "0.0010431863185833556px",
+          "drinkBlur": "1.1992752058902942px"
+        },
+        {
+          "time": "15.99",
+          "pair": [
+            {
+              "x": 251.80203247070312,
+              "y": 328.116455078125,
+              "width": 432.3905944824219,
+              "height": 540.5,
+              "fit": "contain",
+              "origin": "216.195px 472.938px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 251.80203247070312,
+              "y": 328.116455078125,
+              "width": 432.3905944824219,
+              "height": 540.5,
+              "fit": "contain",
+              "origin": "216.195px 472.938px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "0",
+          "served": "1",
+          "clip": "0%",
+          "surfaceY": "484.52",
+          "stageBlur": "0px",
+          "drinkBlur": "3px"
+        },
+        {
+          "time": "10.31",
+          "pair": [
+            {
+              "x": 158.6394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 158.6394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "0.4772369959276638",
+          "served": "1",
+          "clip": "16.252970669093322%",
+          "surfaceY": "400.12",
+          "stageBlur": "4px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "8.71",
+          "pair": [
+            {
+              "x": 158.6394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 158.6394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "1",
+          "served": "1",
+          "clip": "58.255547070808845%",
+          "surfaceY": "468.40",
+          "stageBlur": "4px",
+          "drinkBlur": "0px"
+        }
+      ],
+      "images": [
+        {
+          "src": "http://localhost:3000/media/overhead/overhead-stage-mobile.webp",
+          "width": 900,
+          "height": 1350,
+          "complete": true
+        },
+        {
+          "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp",
+          "width": 640,
+          "height": 800,
+          "complete": true
+        },
+        {
+          "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp",
+          "width": 640,
+          "height": 800,
+          "complete": true
+        }
+      ],
+      "resources": [
+        {
+          "url": "stage-placeholder.svg",
+          "encoded": 0,
+          "transfer": 300,
+          "duration": 2
+        },
+        {
+          "url": "overhead-stage-mobile.webp",
+          "encoded": 0,
+          "transfer": 300,
+          "duration": 1.8000000044703484
+        },
+        {
+          "url": "prepared-placeholder.svg",
+          "encoded": 0,
+          "transfer": 300,
+          "duration": 6.5
+        },
+        {
+          "url": "overhead-cocktail-prepared-mobile.webp",
+          "encoded": 0,
+          "transfer": 300,
+          "duration": 3.3000000044703484
+        },
+        {
+          "url": "served-placeholder.svg",
+          "encoded": 0,
+          "transfer": 300,
+          "duration": 2.7999999970197678
+        },
+        {
+          "url": "overhead-cocktail-served-mobile.webp",
+          "encoded": 0,
+          "transfer": 300,
+          "duration": 4.600000001490116
+        }
+      ],
+      "heap": {
+        "used": 57173704,
+        "total": 77739636
+      }
+    },
+    {
+      "width": 430,
+      "deferred": true,
+      "states": [
+        {
+          "time": "7.19",
+          "pair": [
+            {
+              "x": 182.36880493164062,
+              "y": 329.1695556640625,
+              "width": 226.09375,
+              "height": 282.625,
+              "fit": "contain",
+              "origin": "113.047px 247.297px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 182.36880493164062,
+              "y": 329.1695556640625,
+              "width": 226.09375,
+              "height": 282.625,
+              "fit": "contain",
+              "origin": "113.047px 247.297px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "1",
+          "served": "0",
+          "clip": "75.10378000152711%",
+          "surfaceY": "516.44",
+          "stageBlur": "4px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "8.69",
+          "pair": [
+            {
+              "x": 178.6394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 178.6394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "1",
+          "served": "1",
+          "clip": "58.677282622744585%",
+          "surfaceY": "469.59",
+          "stageBlur": "4px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "9.88",
+          "pair": [
+            {
+              "x": 178.6394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 178.6394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "1",
+          "served": "1",
+          "clip": "38.16147618087544%",
+          "surfaceY": "411.70",
+          "stageBlur": "4px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "10.28",
+          "pair": [
+            {
+              "x": 178.6394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 178.6394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "0.5384562090850075",
+          "served": "1",
+          "clip": "18.448773883881085%",
+          "surfaceY": "400.70",
+          "stageBlur": "4px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "10.69",
+          "pair": [
+            {
+              "x": 178.6394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 178.6394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "0.000998890869887914",
+          "served": "1",
+          "clip": "0.03312891395697053%",
+          "surfaceY": "397.61",
+          "stageBlur": "4px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "12.29",
+          "pair": [
+            {
+              "x": 21.712038040161133,
+              "y": 70.81867980957031,
+              "width": 386.5625,
+              "height": 483.21875,
+              "fit": "contain",
+              "origin": "193.281px 422.816px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 21.712038040161133,
+              "y": 70.81867980957031,
+              "width": 386.5625,
+              "height": 483.21875,
+              "fit": "contain",
+              "origin": "193.281px 422.816px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "0",
+          "served": "1",
+          "clip": "0%",
+          "surfaceY": "207.82",
+          "stageBlur": "4px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "14.18",
+          "pair": [
+            {
+              "x": 52.186763763427734,
+              "y": 135.62918090820312,
+              "width": 396.078125,
+              "height": 495.1093444824219,
+              "fit": "contain",
+              "origin": "198.039px 433.221px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 52.186763763427734,
+              "y": 135.62918090820312,
+              "width": 396.078125,
+              "height": 495.1093444824219,
+              "fit": "contain",
+              "origin": "198.039px 433.221px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "0",
+          "served": "1",
+          "clip": "0%",
+          "surfaceY": "276.48",
+          "stageBlur": "2.633516248514435px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "14.59",
+          "pair": [
+            {
+              "x": 138.0539093017578,
+              "y": 220.43905639648438,
+              "width": 411.78125,
+              "height": 514.734375,
+              "fit": "contain",
+              "origin": "205.891px 450.393px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 138.0539093017578,
+              "y": 220.43905639648438,
+              "width": 411.78125,
+              "height": 514.734375,
+              "fit": "contain",
+              "origin": "205.891px 450.393px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "0",
+          "served": "1",
+          "clip": "0%",
+          "surfaceY": "367.88",
+          "stageBlur": "0.0008446144342264539px",
+          "drinkBlur": "1.2024871171596208px"
+        },
+        {
+          "time": "15.99",
+          "pair": [
+            {
+              "x": 271.8020324707031,
+              "y": 328.053955078125,
+              "width": 432.3905944824219,
+              "height": 540.5,
+              "fit": "contain",
+              "origin": "216.195px 472.938px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 271.8020324707031,
+              "y": 328.053955078125,
+              "width": 432.3905944824219,
+              "height": 540.5,
+              "fit": "contain",
+              "origin": "216.195px 472.938px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "0",
+          "served": "1",
+          "clip": "0%",
+          "surfaceY": "484.52",
+          "stageBlur": "0px",
+          "drinkBlur": "3px"
+        },
+        {
+          "time": "10.31",
+          "pair": [
+            {
+              "x": 178.6394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 178.6394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "0.47816617325363175",
+          "served": "1",
+          "clip": "16.286038815004037%",
+          "surfaceY": "400.13",
+          "stageBlur": "4px",
+          "drinkBlur": "0px"
+        },
+        {
+          "time": "8.71",
+          "pair": [
+            {
+              "x": 178.6394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp"
+            },
+            {
+              "x": 178.6394500732422,
+              "y": 329.0357360839844,
+              "width": 225.70314025878906,
+              "height": 282.1250305175781,
+              "fit": "contain",
+              "origin": "112.852px 246.859px",
+              "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+            }
+          ],
+          "prepared": "1",
+          "served": "1",
+          "clip": "58.27558379540058%",
+          "surfaceY": "468.45",
+          "stageBlur": "4px",
+          "drinkBlur": "0px"
+        }
+      ],
+      "images": [
+        {
+          "src": "http://localhost:3000/media/overhead/overhead-stage-mobile.webp",
+          "width": 900,
+          "height": 1350,
+          "complete": true
+        },
+        {
+          "src": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp",
+          "width": 640,
+          "height": 800,
+          "complete": true
+        },
+        {
+          "src": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp",
+          "width": 640,
+          "height": 800,
+          "complete": true
+        }
+      ],
+      "resources": [
+        {
+          "url": "overhead-stage-mobile.webp",
+          "encoded": 0,
+          "transfer": 300,
+          "duration": 4.200000002980232
+        },
+        {
+          "url": "overhead-cocktail-prepared-mobile.webp",
+          "encoded": 0,
+          "transfer": 300,
+          "duration": 5.700000002980232
+        },
+        {
+          "url": "overhead-cocktail-served-mobile.webp",
+          "encoded": 0,
+          "transfer": 300,
+          "duration": 4.799999997019768
+        },
+        {
+          "url": "stage-placeholder.svg",
+          "encoded": 356,
+          "transfer": 300,
+          "duration": 4.399999998509884
+        },
+        {
+          "url": "prepared-placeholder.svg",
+          "encoded": 452,
+          "transfer": 300,
+          "duration": 4.399999998509884
+        },
+        {
+          "url": "served-placeholder.svg",
+          "encoded": 453,
+          "transfer": 300,
+          "duration": 4.799999997019768
+        }
+      ],
+      "heap": {
+        "used": 44459639,
+        "total": 73878819
+      }
+    }
+  ],
+  "loading": {
+    "ready": "false",
+    "fallback": true,
+    "opacity": "0",
+    "preparedReady": "true"
+  },
+  "loaded": 3,
+  "errors": []
+}

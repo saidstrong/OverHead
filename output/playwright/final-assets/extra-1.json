@@ -1,0 +1,66 @@
+{
+  "resize": [
+    {
+      "width": 610,
+      "failed": "false",
+      "sources": [
+        "http://localhost:3000/media/overhead/overhead-stage-desktop.webp",
+        "http://localhost:3000/media/overhead/overhead-cocktail-prepared-desktop.webp",
+        "http://localhost:3000/media/overhead/overhead-cocktail-served-desktop.webp"
+      ]
+    },
+    {
+      "width": 590,
+      "failed": "false",
+      "sources": [
+        "http://localhost:3000/media/overhead/overhead-stage-mobile.webp",
+        "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp",
+        "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+      ]
+    },
+    {
+      "width": 610,
+      "failed": "false",
+      "sources": [
+        "http://localhost:3000/media/overhead/overhead-stage-desktop.webp",
+        "http://localhost:3000/media/overhead/overhead-cocktail-prepared-desktop.webp",
+        "http://localhost:3000/media/overhead/overhead-cocktail-served-desktop.webp"
+      ]
+    },
+    {
+      "width": 375,
+      "failed": "false",
+      "sources": [
+        "http://localhost:3000/media/overhead/overhead-stage-mobile.webp",
+        "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp",
+        "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp"
+      ]
+    }
+  ],
+  "alpha": [
+    {
+      "source": "http://localhost:3000/media/overhead/overhead-stage-mobile.webp",
+      "width": 900,
+      "height": 1350,
+      "cornerAlpha": 255
+    },
+    {
+      "source": "http://localhost:3000/media/overhead/overhead-cocktail-prepared-mobile.webp",
+      "width": 640,
+      "height": 800,
+      "cornerAlpha": 0
+    },
+    {
+      "source": "http://localhost:3000/media/overhead/overhead-cocktail-served-mobile.webp",
+      "width": 640,
+      "height": 800,
+      "cornerAlpha": 0
+    }
+  ],
+  "failure": {
+    "ready": "false",
+    "canvas": false,
+    "fallback": true,
+    "overflow": false
+  }
+}

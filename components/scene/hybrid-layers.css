@@ -1,0 +1,107 @@
+.hybrid-layers {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  --drink-blur: 0px;
+  --drink-contrast: 1;
+  --stage-blur: 8px;
+  --stage-brightness: 0.28;
+  --stage-scale: 1.08;
+  --stage-y: -2%;
+}
+.hybrid-stage {
+  position: absolute;
+  inset: -12px;
+  z-index: 0;
+  overflow: hidden;
+  background: #0b0909;
+  transform: translateY(var(--stage-y)) scale(var(--stage-scale));
+  filter: blur(var(--stage-blur)) brightness(var(--stage-brightness));
+}
+.hybrid-plate,
+.hybrid-plate picture,
+.hybrid-plate img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.hybrid-plate img {
+  object-fit: contain;
+  transform-origin: 50% 87.5%;
+}
+.hybrid-stage .hybrid-plate img {
+  object-fit: cover;
+}
+.hybrid-asset-label {
+  position: absolute;
+  top: 43%;
+  left: 12%;
+  right: 12%;
+  color: #c0ae91;
+  font:
+    9px/1.6 system-ui,
+    sans-serif;
+  text-align: center;
+  letter-spacing: 0.09em;
+}
+.hybrid-stage .hybrid-asset-label {
+  top: 26%;
+  font-size: 11px;
+}
+.hybrid-cocktail {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: var(--plate-width, 0px);
+  height: var(--plate-height, 0px);
+  transform: translate(var(--plate-x), var(--plate-y));
+  z-index: 2;
+  filter: blur(var(--drink-blur)) contrast(var(--drink-contrast));
+  visibility: hidden;
+}
+[data-projected='true'] .hybrid-cocktail {
+  visibility: visible;
+}
+.hybrid-cocktail__prepared,
+.hybrid-cocktail__served {
+  position: absolute;
+  inset: 0;
+}
+.hybrid-cocktail__prepared {
+  opacity: var(--prepared-opacity, 1);
+}
+.hybrid-cocktail__served {
+  opacity: var(--served-opacity, 0);
+  mask-image: linear-gradient(
+    to bottom,
+    /* Crossfade the whole silhouette during takeover, including the peel above the rim. */ rgb(
+        0 0 0 / calc(1 - var(--prepared-opacity, 1))
+      )
+      calc(var(--fill-clip, 100%) - 0.75%),
+    #000 calc(var(--fill-clip, 100%) + 0.75%)
+  );
+}
+.hybrid-cocktail__contact {
+  position: absolute;
+  left: 17%;
+  right: 17%;
+  top: 86.5%;
+  height: 3%;
+  border-radius: 50%;
+  background: #0009;
+  filter: blur(5px);
+}
+/* No permanent will-change promotion, filter animation loop, or full-page filter. */
+@media (max-width: 600px) {
+  .hybrid-layers {
+    --stage-blur: 4px;
+  }
+  .hybrid-asset-label {
+    font-size: 7px;
+    letter-spacing: 0.04em;
+  }
+  .hybrid-stage .hybrid-asset-label {
+    font-size: 9px;
+  }
+}

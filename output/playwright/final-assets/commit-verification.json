@@ -1,0 +1,506 @@
+{
+  "date": "2026-09-09",
+  "build": "PASS",
+  "typecheck": "PASS",
+  "sceneLint": "PASS",
+  "repositoryLint": {
+    "status": "FAIL",
+    "preExistingUnrelatedErrors": 19,
+    "modified": false
+  },
+  "protectedMotion": "PASS",
+  "browser": [
+    {
+      "states": [
+        {
+          "width": 1440,
+          "name": "initial",
+          "time": "0.00",
+          "overflow": false,
+          "calls": "12",
+          "triangles": "14414"
+        },
+        {
+          "width": 1440,
+          "name": "shake",
+          "time": "3.00",
+          "overflow": false,
+          "calls": "12",
+          "triangles": "14414"
+        },
+        {
+          "width": 1440,
+          "name": "separation",
+          "time": "6.10",
+          "overflow": false,
+          "calls": "12",
+          "triangles": "14414"
+        },
+        {
+          "width": 1440,
+          "name": "pour",
+          "time": "8.70",
+          "overflow": false,
+          "calls": "8",
+          "triangles": "8094"
+        },
+        {
+          "width": 1440,
+          "name": "served",
+          "time": "12.30",
+          "overflow": false,
+          "calls": "2",
+          "triangles": "14"
+        },
+        {
+          "width": 1440,
+          "name": "music",
+          "time": "16.00",
+          "overflow": false,
+          "calls": "2",
+          "triangles": "14"
+        },
+        {
+          "width": 375,
+          "name": "initial",
+          "time": "0.00",
+          "overflow": false,
+          "calls": "12",
+          "triangles": "14414"
+        },
+        {
+          "width": 375,
+          "name": "shake",
+          "time": "3.00",
+          "overflow": false,
+          "calls": "12",
+          "triangles": "14414"
+        },
+        {
+          "width": 375,
+          "name": "separation",
+          "time": "6.10",
+          "overflow": false,
+          "calls": "12",
+          "triangles": "14414"
+        },
+        {
+          "width": 375,
+          "name": "pour",
+          "time": "8.70",
+          "overflow": false,
+          "calls": "8",
+          "triangles": "8094"
+        },
+        {
+          "width": 375,
+          "name": "served",
+          "time": "12.30",
+          "overflow": false,
+          "calls": "1",
+          "triangles": "12"
+        },
+        {
+          "width": 375,
+          "name": "music",
+          "time": "16.00",
+          "overflow": false,
+          "calls": "1",
+          "triangles": "12"
+        },
+        {
+          "width": 390,
+          "name": "initial",
+          "time": "0.00",
+          "overflow": false,
+          "calls": "12",
+          "triangles": "14414"
+        },
+        {
+          "width": 390,
+          "name": "shake",
+          "time": "3.00",
+          "overflow": false,
+          "calls": "12",
+          "triangles": "14414"
+        },
+        {
+          "width": 390,
+          "name": "separation",
+          "time": "6.10",
+          "overflow": false,
+          "calls": "12",
+          "triangles": "14414"
+        },
+        {
+          "width": 390,
+          "name": "pour",
+          "time": "8.70",
+          "overflow": false,
+          "calls": "8",
+          "triangles": "8094"
+        },
+        {
+          "width": 390,
+          "name": "served",
+          "time": "12.30",
+          "overflow": false,
+          "calls": "1",
+          "triangles": "12"
+        },
+        {
+          "width": 390,
+          "name": "music",
+          "time": "16.00",
+          "overflow": false,
+          "calls": "1",
+          "triangles": "12"
+        },
+        {
+          "width": 430,
+          "name": "initial",
+          "time": "0.00",
+          "overflow": false,
+          "calls": "12",
+          "triangles": "14414"
+        },
+        {
+          "width": 430,
+          "name": "shake",
+          "time": "3.00",
+          "overflow": false,
+          "calls": "12",
+          "triangles": "14414"
+        },
+        {
+          "width": 430,
+          "name": "separation",
+          "time": "6.10",
+          "overflow": false,
+          "calls": "12",
+          "triangles": "14414"
+        },
+        {
+          "width": 430,
+          "name": "pour",
+          "time": "8.70",
+          "overflow": false,
+          "calls": "8",
+          "triangles": "8094"
+        },
+        {
+          "width": 430,
+          "name": "served",
+          "time": "12.30",
+          "overflow": false,
+          "calls": "1",
+          "triangles": "12"
+        },
+        {
+          "width": 430,
+          "name": "music",
+          "time": "16.00",
+          "overflow": false,
+          "calls": "1",
+          "triangles": "12"
+        }
+      ],
+      "errors": [],
+      "warnings": [
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+        "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n\n\n\u0000",
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+        "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead."
+      ]
+    },
+    {
+      "states": [
+        {
+          "width": 1440,
+          "target": 16,
+          "actual": "15.98"
+        },
+        {
+          "width": 1440,
+          "target": 12.3,
+          "actual": "12.31"
+        },
+        {
+          "width": 1440,
+          "target": 8.7,
+          "actual": "8.72"
+        },
+        {
+          "width": 1440,
+          "target": 6.1,
+          "actual": "6.12"
+        },
+        {
+          "width": 1440,
+          "target": 3,
+          "actual": "3.02"
+        },
+        {
+          "width": 1440,
+          "target": 0,
+          "actual": "0.02"
+        },
+        {
+          "width": 375,
+          "target": 16,
+          "actual": "15.98"
+        },
+        {
+          "width": 375,
+          "target": 12.3,
+          "actual": "12.32"
+        },
+        {
+          "width": 375,
+          "target": 8.7,
+          "actual": "8.72"
+        },
+        {
+          "width": 375,
+          "target": 6.1,
+          "actual": "6.12"
+        },
+        {
+          "width": 375,
+          "target": 3,
+          "actual": "3.02"
+        },
+        {
+          "width": 375,
+          "target": 0,
+          "actual": "0.02"
+        },
+        {
+          "width": 390,
+          "target": 16,
+          "actual": "15.98"
+        },
+        {
+          "width": 390,
+          "target": 12.3,
+          "actual": "12.32"
+        },
+        {
+          "width": 390,
+          "target": 8.7,
+          "actual": "8.72"
+        },
+        {
+          "width": 390,
+          "target": 6.1,
+          "actual": "6.12"
+        },
+        {
+          "width": 390,
+          "target": 3,
+          "actual": "3.02"
+        },
+        {
+          "width": 390,
+          "target": 0,
+          "actual": "0.02"
+        },
+        {
+          "width": 430,
+          "target": 16,
+          "actual": "15.98"
+        },
+        {
+          "width": 430,
+          "target": 12.3,
+          "actual": "12.31"
+        },
+        {
+          "width": 430,
+          "target": 8.7,
+          "actual": "8.72"
+        },
+        {
+          "width": 430,
+          "target": 6.1,
+          "actual": "6.12"
+        },
+        {
+          "width": 430,
+          "target": 3,
+          "actual": "3.02"
+        },
+        {
+          "width": 430,
+          "target": 0,
+          "actual": "0.02"
+        }
+      ],
+      "reduced": [
+        {
+          "width": 1440,
+          "time": "12.30",
+          "reduced": "true",
+          "height": 781,
+          "panel": 781,
+          "overflow": false
+        },
+        {
+          "width": 375,
+          "time": "12.30",
+          "reduced": "true",
+          "height": 739,
+          "panel": 739,
+          "overflow": false
+        },
+        {
+          "width": 390,
+          "time": "12.30",
+          "reduced": "true",
+          "height": 739,
+          "panel": 739,
+          "overflow": false
+        },
+        {
+          "width": 430,
+          "time": "12.30",
+          "reduced": "true",
+          "height": 739,
+          "panel": 739,
+          "overflow": false
+        }
+      ],
+      "errors": []
+    },
+    {
+      "deferred": true,
+      "idleBefore": {
+        "time": "8.70",
+        "reduced": "false",
+        "height": 3545,
+        "panel": 739,
+        "canvas": {
+          "engine": "three.js r185",
+          "renderFrame": "49",
+          "sceneTime": "8.70",
+          "drawCalls": "8",
+          "triangles": "8094"
+        },
+        "overflow": false
+      },
+      "idleAfter": {
+        "time": "8.70",
+        "reduced": "false",
+        "height": 3545,
+        "panel": 739,
+        "canvas": {
+          "engine": "three.js r185",
+          "renderFrame": "49",
+          "sceneTime": "8.70",
+          "drawCalls": "8",
+          "triangles": "8094"
+        },
+        "overflow": false
+      },
+      "reverse": {
+        "time": "0.00",
+        "reduced": "false",
+        "height": 3545,
+        "panel": 739,
+        "canvas": {
+          "engine": "three.js r185",
+          "renderFrame": "60",
+          "sceneTime": "0.00",
+          "drawCalls": "12",
+          "triangles": "14414"
+        },
+        "overflow": false
+      },
+      "offBefore": {
+        "time": "0.00",
+        "reduced": "false",
+        "height": 3545,
+        "panel": 739,
+        "canvas": {
+          "engine": "three.js r185",
+          "renderFrame": "61",
+          "sceneTime": "0.00",
+          "drawCalls": "12",
+          "triangles": "14414"
+        },
+        "overflow": false
+      },
+      "offAfter": {
+        "time": "0.00",
+        "reduced": "false",
+        "height": 3545,
+        "panel": 739,
+        "canvas": {
+          "engine": "three.js r185",
+          "renderFrame": "61",
+          "sceneTime": "0.00",
+          "drawCalls": "12",
+          "triangles": "14414"
+        },
+        "overflow": false
+      },
+      "reducedBefore": {
+        "time": "12.30",
+        "reduced": "true",
+        "height": 739,
+        "panel": 739,
+        "canvas": {
+          "engine": "three.js r185",
+          "renderFrame": "63",
+          "sceneTime": "12.30",
+          "drawCalls": "12",
+          "triangles": "14414"
+        },
+        "overflow": false
+      },
+      "reducedAfter": {
+        "time": "12.30",
+        "reduced": "true",
+        "height": 739,
+        "panel": 739,
+        "canvas": {
+          "engine": "three.js r185",
+          "renderFrame": "64",
+          "sceneTime": "12.30",
+          "drawCalls": "12",
+          "triangles": "14414"
+        },
+        "overflow": false
+      },
+      "performanceSample": {
+        "frames": 145,
+        "elapsed": 2406.5999999985106,
+        "medianMs": 16.69999999999891,
+        "p95Ms": 17.100000000000364
+      },
+      "short": {
+        "time": "8.70",
+        "reduced": "false",
+        "height": 2801,
+        "panel": 562,
+        "canvas": {
+          "engine": "three.js r185",
+          "renderFrame": "181",
+          "sceneTime": "8.70",
+          "drawCalls": "8",
+          "triangles": "8094"
+        },
+        "overflow": false
+      },
+      "fallback": {
+        "failed": "true",
+        "canvas": false,
+        "svg": true,
+        "height": 562,
+        "panel": 562
+      },
+      "errors": []
+    }
+  ]
+}

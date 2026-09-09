@@ -96,17 +96,6 @@ export function surfaceTextures() {
   stone.colorSpace = THREE.SRGBColorSpace;
   stone.wrapS = stone.wrapT = THREE.RepeatWrapping;
   stone.repeat.set(5, 4);
-  const poresCanvas = document.createElement('canvas');
-  poresCanvas.width = poresCanvas.height = 128;
-  const poresCtx = poresCanvas.getContext('2d')!;
-  poresCtx.fillStyle = '#a3a3a3';
-  poresCtx.fillRect(0, 0, 128, 128);
-  for (let i = 0; i < 1900; i++) {
-    poresCtx.fillStyle = random() > 0.5 ? '#898989' : '#b4b4b4';
-    poresCtx.fillRect(random() * 128, random() * 128, 1, 1);
-  }
-  const pores = new THREE.CanvasTexture(poresCanvas);
-  pores.wrapS = pores.wrapT = THREE.RepeatWrapping;
   const shadowCanvas = document.createElement('canvas');
   shadowCanvas.width = shadowCanvas.height = 128;
   const shadowCtx = shadowCanvas.getContext('2d')!;
@@ -117,25 +106,5 @@ export function surfaceTextures() {
   shadowCtx.fillStyle = gradient;
   shadowCtx.fillRect(0, 0, 128, 128);
   const contact = new THREE.CanvasTexture(shadowCanvas);
-  return { brush, stone, pores, contact };
-}
-
-// Maintain clear face-on views but retain edge reflections, unlike uniform alpha.
-export function fresnelAlpha(
-  material: THREE.MeshPhysicalMaterial,
-  faceAlpha: number,
-) {
-  material.onBeforeCompile = (shader) => {
-    shader.fragmentShader = shader.fragmentShader.replace(
-      '#include <opaque_fragment>',
-      `
-      float edgeOpacity = pow(1.0 - abs(dot(normalize(normal), normalize(vViewPosition))), 2.2);
-      outgoingLight += vec3(.12,.15,.14) * edgeOpacity;
-      diffuseColor.a *= mix(${faceAlpha.toFixed(3)}, 1.0, edgeOpacity);
-      #include <opaque_fragment>
-    `,
-    );
-  };
-  material.customProgramCacheKey = () => `bar-fresnel-${faceAlpha}`;
-  return material;
+  return { brush, stone, contact };
 }

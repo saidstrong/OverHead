@@ -1,5 +1,7 @@
 # Overhead authored bar assets
 
+Historical assets: retained for checkpoint recovery and the offline validation scripts. The hybrid scene no longer loads this GLB. Current rendered-plate integration is documented in `public/media/overhead/README.md`; the runtime descriptions below record the earlier stylized pass.
+
 `bar-assets.glb` is original project geometry authored locally in `scripts/author-bar-assets.mjs`. No downloaded model, scan, character likeness, texture or third-party art is included. There is no external asset-license or attribution dependency. Three.js (MIT, already a project dependency) is used as the offline mesh/export tool; its package license remains applicable to the library, not as an external artwork license.
 
 This is **script-authored geometry from explicit profiles/control cages**, not a claim of a manually sculpted or scanned commercial asset. Rebuild from the repository root with `node scripts/author-bar-assets.mjs`.

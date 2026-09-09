@@ -1,0 +1,24 @@
+async(page)=>{
+ const errors=[],states=[];page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
+ for(const width of [1440,375,390,430]){
+  await page.emulateMedia({reducedMotion:'no-preference'});await page.setViewportSize({width,height:width===1440?1000:844});await page.goto('http://localhost:3000');
+  const deferred=await page.evaluate(()=>!performance.getEntriesByType('resource').some(r=>r.name.includes('/media/overhead/')||r.name.includes('bar-canvas')));
+  const scene=page.locator('[data-bar-experience]');await scene.evaluate(el=>scrollTo({top:el.getBoundingClientRect().top+scrollY-24,behavior:'instant'}));await page.locator('[data-scene-ready="true"]').waitFor({state:'attached'});await page.evaluate(()=>document.fonts.ready);await page.waitForTimeout(800);
+  for(const t of [7.2,8.7,9.9,10.3,10.7,12.3,14.2,14.6,15.35,16,10.3,7.2]){
+   await scene.evaluate((el,t)=>scrollTo({top:el.getBoundingClientRect().top+scrollY-24+(el.offsetHeight-el.firstElementChild.offsetHeight)*t/16,behavior:'instant'}),t);await page.waitForFunction(t=>Math.abs(Number(document.querySelector('[data-bar-experience]').dataset.sceneTime)-t)<.025,t);await page.waitForTimeout(150);
+   states.push({width,t,deferred,...await page.locator('[data-hybrid-layers]').evaluate(el=>{
+    const box=el.querySelector('[data-hybrid-cocktail]'),b=box.getBoundingClientRect(),outer=el.getBoundingClientRect(),s=getComputedStyle(el),frame=el.closest('figure');
+    const clip=parseFloat(s.getPropertyValue('--fill-clip')),maskY=b.top-outer.top+b.height*clip/100;
+    const link=frame.querySelector('.bar-experience__next'),r=link.getBoundingClientRect();
+    return {fill:+el.dataset.fill,takeover:+el.dataset.takeover,focus:+el.dataset.focus,
+      plateWidth:b.width,maskY,surfaceY:+el.dataset.surfaceY,clip,
+      prepared:+s.getPropertyValue('--prepared-opacity'),served:+s.getPropertyValue('--served-opacity'),
+      drinkBlur:s.getPropertyValue('--drink-blur'),stageBlur:s.getPropertyValue('--stage-blur'),
+      ctaHit:link.contains(document.elementFromPoint(r.x+r.width/2,r.y+r.height/2)),
+      overflow:document.documentElement.scrollWidth>innerWidth,
+      glb:performance.getEntriesByType('resource').some(r=>r.name.endsWith('.glb'))};
+   })});
+  }
+ }
+ return {states,errors};
+}

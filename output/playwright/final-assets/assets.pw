@@ -1,0 +1,24 @@
+async(page)=>{
+ await page.unrouteAll({behavior:'ignoreErrors'});
+ const result=[],errors=[];page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
+ for(const width of [1440,375,390,430]){
+  await page.emulateMedia({reducedMotion:'no-preference'});await page.setViewportSize({width,height:width===1440?1000:844});await page.goto('http://localhost:3000');await page.evaluate(()=>document.fonts.ready);
+  const deferred=await page.evaluate(()=>!performance.getEntriesByType('resource').some(r=>r.name.includes('/media/overhead/')||r.name.includes('bar-canvas')));
+  const scene=page.locator('[data-bar-experience]');await scene.evaluate(el=>el.scrollIntoView({block:'start',behavior:'instant'}));await page.locator('[data-scene-ready="true"]').waitFor({state:'attached'});await page.waitForTimeout(700);
+  const at=async(t)=>{await scene.evaluate((el,t)=>scrollTo({top:el.getBoundingClientRect().top+scrollY-24+(el.offsetHeight-el.firstElementChild.offsetHeight)*t/16,behavior:'instant'}),t);await page.waitForFunction(t=>Math.abs(Number(document.querySelector('[data-bar-experience] canvas').dataset.sceneTime)-t)<.025,t);};
+  const states=[];for(const t of [7.2,8.7,9.9,10.3,10.7,12.3,14.2,14.6,16,10.3,8.7]){await at(t);states.push(await page.evaluate(()=>{
+   const root=document.querySelector('[data-hybrid-layers]'),s=getComputedStyle(root),pair=[...document.querySelectorAll('.hybrid-cocktail picture img')].map(i=>{const b=i.getBoundingClientRect(),cs=getComputedStyle(i);return {x:b.x,y:b.y,width:b.width,height:b.height,fit:cs.objectFit,origin:cs.transformOrigin,src:i.currentSrc};});
+   return {time:document.querySelector('[data-bar-experience]').dataset.sceneTime,pair,prepared:s.getPropertyValue('--prepared-opacity'),served:s.getPropertyValue('--served-opacity'),clip:s.getPropertyValue('--fill-clip'),surfaceY:root.dataset.surfaceY,stageBlur:s.getPropertyValue('--stage-blur'),drinkBlur:s.getPropertyValue('--drink-blur')};
+  }));}
+  result.push({width,deferred,states,...await page.evaluate(()=>({
+   images:[...document.querySelectorAll('.hybrid-plate picture img')].map(i=>({src:i.currentSrc,width:i.naturalWidth,height:i.naturalHeight,complete:i.complete})),
+   resources:performance.getEntriesByType('resource').filter(r=>r.name.includes('/media/overhead/')).map(r=>({url:r.name.split('/').pop(),encoded:r.encodedBodySize,transfer:r.transferSize,duration:r.duration})),
+   heap:performance.memory?{used:performance.memory.usedJSHeapSize,total:performance.memory.totalJSHeapSize}:null
+  }))});
+ }
+ // Deliberately withhold the served file: no partially loaded plate set may appear.
+ let release;const gate=new Promise(r=>release=r);await page.route('**/overhead-cocktail-served-mobile.webp',async route=>{await gate;await route.continue();});await page.goto('http://localhost:3000');await page.evaluate(()=>document.fonts.ready);await page.waitForTimeout(700);await page.locator('[data-bar-experience]').evaluate(el=>el.scrollIntoView({block:'start',behavior:'instant'}));await page.locator('.hybrid-layers').waitFor({state:'attached'});await page.locator('.hybrid-cocktail__prepared .hybrid-plate[data-asset-ready="true"]').waitFor({state:'attached'});
+ const loading=await page.evaluate(()=>({ready:document.querySelector('[data-bar-experience]').dataset.sceneReady,fallback:!!document.querySelector('.bar-experience__fallback'),opacity:getComputedStyle(document.querySelector('.hybrid-layers')).opacity,preparedReady:document.querySelector('.hybrid-cocktail__prepared .hybrid-plate').dataset.assetReady}));
+ release();await page.locator('[data-scene-ready="true"]').waitFor({state:'attached'});const loaded=await page.locator('.hybrid-plate[data-asset-ready="true"]').count();await page.unroute('**/overhead-cocktail-served-mobile.webp');
+ return {result,loading,loaded,errors};
+}
