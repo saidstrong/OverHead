@@ -1,0 +1,22 @@
+async(page)=>{
+ const errors=[];page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());});
+ await page.setViewportSize({width:390,height:844});await page.goto('http://localhost:3000');
+ const deferred=await page.evaluate(()=>!performance.getEntriesByType('resource').some(r=>r.name.includes('bar-canvas')));
+ const scene=page.locator('[data-bar-experience]');await scene.evaluate(el=>window.scrollTo({top:el.getBoundingClientRect().top+scrollY-24,behavior:'instant'}));
+ await page.locator('[data-scene-ready="true"]').waitFor({state:'attached'});await page.evaluate(()=>document.fonts.ready);await page.evaluate(()=>window.dispatchEvent(new Event('resize')));await page.waitForTimeout(700);
+ const at=async(t)=>{await scene.evaluate((el,t)=>window.scrollTo({top:el.getBoundingClientRect().top+scrollY-24+(el.offsetHeight-el.firstElementChild.offsetHeight)*t/16,behavior:'instant'}),t);await page.waitForTimeout(900);};
+ const state=()=>scene.evaluate(el=>({time:el.dataset.sceneTime,reduced:el.dataset.reducedMotion,height:el.offsetHeight,panel:el.firstElementChild.offsetHeight,canvas:{...el.querySelector('canvas')?.dataset},overflow:document.documentElement.scrollWidth>innerWidth}));
+ await at(8.7);const idleBefore=await state();await page.waitForTimeout(1500);const idleAfter=await state();
+ await at(0);const reverse=await state();await page.evaluate(()=>window.scrollTo({top:0,behavior:'instant'}));await page.waitForTimeout(900);const offBefore=await state();await page.waitForTimeout(1500);const offAfter=await state();
+ await page.emulateMedia({reducedMotion:'reduce'});await page.waitForTimeout(700);await scene.scrollIntoViewIfNeeded();await page.waitForTimeout(600);const reducedBefore=await state();await page.locator('.bar-experience').screenshot({path:'output/playwright/stylized/reduced-390.png'});await page.mouse.wheel(0,90);await page.waitForTimeout(900);const reducedAfter=await state();
+ await page.emulateMedia({reducedMotion:'no-preference'});await page.waitForTimeout(700);await at(0);
+ const performanceSample=await page.evaluate(()=>new Promise(resolve=>{
+  const el=document.querySelector('[data-bar-experience]'),start=el.getBoundingClientRect().top+scrollY-24,travel=(el.offsetHeight-el.firstElementChild.offsetHeight)*.28;
+  const intervals=[];let previous=performance.now(),began=previous;
+  function frame(now){intervals.push(now-previous);previous=now;const p=Math.min((now-began)/2400,1);window.scrollTo({top:start+travel*p,behavior:'instant'});if(p<1)requestAnimationFrame(frame);else{intervals.sort((a,b)=>a-b);resolve({frames:intervals.length,elapsed:now-began,medianMs:intervals[Math.floor(intervals.length/2)],p95Ms:intervals[Math.floor(intervals.length*.95)]});}}requestAnimationFrame(frame);
+ }));
+ await page.setViewportSize({width:375,height:667});await page.waitForTimeout(700);await at(8.7);const short=await state();await page.screenshot({path:'output/playwright/stylized/375-short.png'});
+ await page.locator('canvas').evaluate(c=>c.dispatchEvent(new Event('webglcontextlost',{cancelable:true})));await page.waitForTimeout(600);
+ const fallback=await scene.evaluate(el=>({failed:el.dataset.sceneFailed,canvas:!!el.querySelector('canvas'),svg:!!el.querySelector('svg.bar-experience__fallback'),height:el.offsetHeight,panel:el.firstElementChild.offsetHeight}));
+ return {deferred,idleBefore,idleAfter,reverse,offBefore,offAfter,reducedBefore,reducedAfter,performanceSample,short,fallback,errors};
+}

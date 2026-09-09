@@ -1,0 +1,129 @@
+{
+  "deferred": true,
+  "idleBefore": {
+    "time": "8.70",
+    "reduced": "false",
+    "height": 3545,
+    "panel": 739,
+    "canvas": {
+      "engine": "three.js r185",
+      "renderFrame": "94",
+      "sceneTime": "8.70",
+      "drawCalls": "35",
+      "triangles": "21758"
+    },
+    "overflow": false
+  },
+  "idleAfter": {
+    "time": "8.70",
+    "reduced": "false",
+    "height": 3545,
+    "panel": 739,
+    "canvas": {
+      "engine": "three.js r185",
+      "renderFrame": "94",
+      "sceneTime": "8.70",
+      "drawCalls": "35",
+      "triangles": "21758"
+    },
+    "overflow": false
+  },
+  "reverse": {
+    "time": "0.00",
+    "reduced": "false",
+    "height": 3545,
+    "panel": 739,
+    "canvas": {
+      "engine": "three.js r185",
+      "renderFrame": "139",
+      "sceneTime": "0.00",
+      "drawCalls": "25",
+      "triangles": "21386"
+    },
+    "overflow": false
+  },
+  "offBefore": {
+    "time": "0.00",
+    "reduced": "false",
+    "height": 3545,
+    "panel": 739,
+    "canvas": {
+      "engine": "three.js r185",
+      "renderFrame": "143",
+      "sceneTime": "0.00",
+      "drawCalls": "25",
+      "triangles": "21386"
+    },
+    "overflow": false
+  },
+  "offAfter": {
+    "time": "0.00",
+    "reduced": "false",
+    "height": 3545,
+    "panel": 739,
+    "canvas": {
+      "engine": "three.js r185",
+      "renderFrame": "143",
+      "sceneTime": "0.00",
+      "drawCalls": "25",
+      "triangles": "21386"
+    },
+    "overflow": false
+  },
+  "reducedBefore": {
+    "time": "12.30",
+    "reduced": "true",
+    "height": 739,
+    "panel": 739,
+    "canvas": {
+      "engine": "three.js r185",
+      "renderFrame": "152",
+      "sceneTime": "12.30",
+      "drawCalls": "37",
+      "triangles": "27998"
+    },
+    "overflow": false
+  },
+  "reducedAfter": {
+    "time": "12.30",
+    "reduced": "true",
+    "height": 739,
+    "panel": 739,
+    "canvas": {
+      "engine": "three.js r185",
+      "renderFrame": "157",
+      "sceneTime": "12.30",
+      "drawCalls": "37",
+      "triangles": "27998"
+    },
+    "overflow": false
+  },
+  "performanceSample": {
+    "frames": 145,
+    "elapsed": 2408.7000000014905,
+    "medianMs": 16.69999999999891,
+    "p95Ms": 16.80000000000109
+  },
+  "short": {
+    "time": "0.00",
+    "reduced": "false",
+    "height": 2801,
+    "panel": 562,
+    "canvas": {
+      "engine": "three.js r185",
+      "renderFrame": "44",
+      "sceneTime": "0.00",
+      "drawCalls": "26",
+      "triangles": "21482"
+    },
+    "overflow": false
+  },
+  "fallback": {
+    "failed": "true",
+    "canvas": false,
+    "svg": true,
+    "height": 562,
+    "panel": 562
+  },
+  "errors": []
+}

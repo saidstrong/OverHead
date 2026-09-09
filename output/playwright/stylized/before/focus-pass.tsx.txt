@@ -1,0 +1,334 @@
+'use client';
+/* oxlint-disable react/react-compiler -- This component owns imperative GPU resources, not React state. */
+import { useEffect, useLayoutEffect, useMemo } from 'react';
+import type { RefObject } from 'react';
+import { useFrame, useThree } from '@react-three/fiber';
+import * as THREE from 'three';
+
+// Quarter-resolution separable lens blur, then a depth-aware mix. No animation loop.
+export function FocusPass({
+  distance,
+  glass,
+  wall,
+  liquid,
+  surface,
+  ice,
+}: {
+  distance: RefObject<number>;
+  glass: RefObject<THREE.Group>;
+  wall: RefObject<THREE.Mesh>;
+  liquid: RefObject<THREE.Mesh>;
+  surface: RefObject<THREE.Mesh>;
+  ice: RefObject<THREE.Group>;
+}) {
+  const { gl, size } = useThree();
+  const resources = useMemo(() => {
+    const target = new THREE.WebGLRenderTarget(32, 32, {
+      type: THREE.HalfFloatType,
+      samples: 2,
+    });
+    target.depthTexture = new THREE.DepthTexture(32, 32, THREE.UnsignedIntType);
+    const blurA = new THREE.WebGLRenderTarget(16, 16, {
+      type: THREE.HalfFloatType,
+      depthBuffer: false,
+    });
+    const blurB = blurA.clone();
+    const refracted = new THREE.WebGLRenderTarget(32, 32, {
+      type: THREE.HalfFloatType,
+      samples: 2,
+    });
+    const vertexShader =
+      'varying vec2 vUv; void main(){vUv=uv;gl_Position=vec4(position.xy,0.0,1.0);}';
+    const blurMaterial = new THREE.ShaderMaterial({
+      depthTest: false,
+      depthWrite: false,
+      toneMapped: false,
+      uniforms: {
+        source: { value: target.texture },
+        step: { value: new THREE.Vector2() },
+      },
+      vertexShader,
+      fragmentShader: `
+      varying vec2 vUv;uniform sampler2D source;uniform vec2 step;
+      void main(){vec3 c=texture2D(source,vUv).rgb*.227027;
+        c+=(texture2D(source,vUv+step*1.384615).rgb+texture2D(source,vUv-step*1.384615).rgb)*.316216;
+        c+=(texture2D(source,vUv+step*3.230769).rgb+texture2D(source,vUv-step*3.230769).rgb)*.070270;
+        gl_FragColor=vec4(c,1.);}`,
+    });
+    const copyMaterial = new THREE.ShaderMaterial({
+      depthTest: false,
+      depthWrite: false,
+      toneMapped: false,
+      uniforms: { source: { value: target.texture } },
+      vertexShader,
+      fragmentShader:
+        'varying vec2 vUv;uniform sampler2D source;void main(){gl_FragColor=texture2D(source,vUv);}',
+    });
+    const material = new THREE.ShaderMaterial({
+      depthTest: false,
+      depthWrite: false,
+      uniforms: {
+        color: { value: refracted.texture },
+        blurred: { value: blurB.texture },
+        depth: { value: target.depthTexture },
+        focus: { value: 10 },
+        near: { value: 0.1 },
+        far: { value: 45 },
+        foot: { value: new THREE.Vector3() },
+      },
+      vertexShader,
+      fragmentShader: `
+        uniform sampler2D color,blurred,depth;
+        uniform float focus,near,far; uniform vec3 foot; varying vec2 vUv;
+        void main(){
+          float d=texture2D(depth,vUv).x;
+          float z=near*far/(far-d*(far-near));
+          // Open the depth band during the rack: stage structure becomes readable
+          // before the foreground is fully soft. No second focus/camera animation.
+          float bridge=smoothstep(6.,10.,focus)*(1.-smoothstep(15.,19.,focus));
+          float coc=smoothstep(mix(.8,2.5,bridge),mix(4.,13.,bridge),abs(z-focus));
+          coc*=mix(1.,.72,bridge);
+          vec3 c=mix(texture2D(color,vUv).rgb,texture2D(blurred,vUv).rgb,coc);
+          // A restrained, blurred screen-space foot reflection; no mirror scene render.
+          float dy=foot.y-vUv.y;
+          float contact=step(0.,dy)*(1.-smoothstep(0.,.14,dy));
+          contact*=1.-smoothstep(.75,1.1,abs(vUv.x-foot.x)/max(.001,foot.z));
+          vec3 reflected=texture2D(blurred,vec2(vUv.x,clamp(foot.y+dy*.8,0.,1.))).rgb;
+          c+=reflected*.10*contact;
+          gl_FragColor=vec4(c,1.);
+          #include <tonemapping_fragment>
+          #include <colorspace_fragment>
+        }`,
+    });
+    const quad = new THREE.Mesh(new THREE.PlaneGeometry(2, 2), material);
+    const screen = new THREE.Scene();
+    screen.add(quad);
+    const camera = new THREE.Camera();
+    const proxyScene = new THREE.Scene();
+    const proxy = new THREE.Mesh(
+      new THREE.CylinderGeometry(0.54, 0.5, 1.36, 24),
+      new THREE.MeshBasicMaterial({ colorWrite: false }),
+    );
+    proxyScene.add(proxy);
+    const wallScene = new THREE.Scene();
+    // A few transparent meshes, never a second render of the complete bar/stage.
+    const liquidScene = new THREE.Scene();
+    const iceScene = new THREE.Scene();
+    const liquidMeshes = [new THREE.Mesh(), new THREE.Mesh()];
+    const iceMeshes = [new THREE.Mesh(), new THREE.Mesh()];
+    for (const [layer, meshes] of [
+      [liquidScene, liquidMeshes],
+      [iceScene, iceMeshes],
+    ] as const) {
+      for (const mesh of meshes) {
+        mesh.geometry.dispose();
+        (mesh.material as THREE.Material).dispose();
+        mesh.matrixAutoUpdate = false;
+        layer.add(mesh);
+      }
+    }
+    const wallMesh = new THREE.Mesh();
+    wallMesh.geometry.dispose();
+    (wallMesh.material as THREE.Material).dispose();
+    wallMesh.matrixAutoUpdate = false;
+    wallScene.add(wallMesh);
+    const key = new THREE.PointLight('#fff0d9', 38);
+    key.position.set(-3, 3.5, 3);
+    wallScene.add(key);
+    const rim = new THREE.PointLight('#c0d7ee', 22);
+    rim.position.set(4, 3, 1);
+    wallScene.add(rim);
+    for (const layer of [liquidScene, iceScene]) {
+      layer.add(key.clone(), rim.clone());
+    }
+    return {
+      target,
+      refracted,
+      blurA,
+      blurB,
+      blurMaterial,
+      copyMaterial,
+      material,
+      quad,
+      screen,
+      camera,
+      proxyScene,
+      proxy,
+      wallScene,
+      wallMesh,
+      footPoint: new THREE.Vector3(),
+      edgePoint: new THREE.Vector3(),
+      frustum: new THREE.Frustum(),
+      viewProjection: new THREE.Matrix4(),
+      liquidScene,
+      iceScene,
+      liquidMeshes,
+      iceMeshes,
+    };
+  }, []);
+  useLayoutEffect(() => {
+    const ratio = gl.getPixelRatio(),
+      w = Math.max(4, Math.round(size.width * ratio)),
+      h = Math.max(4, Math.round(size.height * ratio));
+    resources.target.setSize(w, h);
+    resources.refracted.setSize(w, h);
+    resources.blurA.setSize(Math.ceil(w / 4), Math.ceil(h / 4));
+    resources.blurB.setSize(Math.ceil(w / 4), Math.ceil(h / 4));
+  }, [gl, size.width, size.height, resources]);
+  useEffect(
+    () => () => {
+      resources.target.dispose();
+      resources.target.depthTexture?.dispose();
+      resources.refracted.dispose();
+      resources.blurA.dispose();
+      resources.blurB.dispose();
+      resources.blurMaterial.dispose();
+      resources.copyMaterial.dispose();
+      resources.material.dispose();
+      resources.quad.geometry.dispose();
+      resources.proxy.geometry.dispose();
+      resources.proxy.material.dispose();
+    },
+    [resources],
+  );
+  useFrame(({ scene, camera }) => {
+    if (size.width < 1 || size.height < 1) return;
+    const previous = gl.getRenderTarget();
+    const autoClear = gl.autoClear;
+    const wallVisible = wall.current.visible;
+    const liquidVisible = liquid.current.visible;
+    const surfaceVisible = surface.current.visible;
+    const iceVisible = ice.current.visible;
+    resources.frustum.setFromProjectionMatrix(
+      resources.viewProjection.multiplyMatrices(
+        camera.projectionMatrix,
+        camera.matrixWorldInverse,
+      ),
+    );
+    const glassInFrame = resources.frustum.intersectsObject(wall.current);
+    try {
+      gl.setRenderTarget(resources.target);
+      wall.current.visible = false;
+      liquid.current.visible = false;
+      surface.current.visible = false;
+      ice.current.visible = false;
+      gl.render(scene, camera);
+      wall.current.visible = wallVisible;
+      liquid.current.visible = liquidVisible;
+      surface.current.visible = surfaceVisible;
+      ice.current.visible = iceVisible;
+      let calls = gl.info.render.calls,
+        triangles = gl.info.render.triangles;
+      const account = () => {
+        calls += gl.info.render.calls;
+        triangles += gl.info.render.triangles;
+      };
+      const sync = (source: THREE.Mesh, clone: THREE.Mesh) => {
+        clone.geometry = source.geometry;
+        clone.material = source.material;
+        clone.matrix.copy(source.matrixWorld);
+        clone.visible = source.visible;
+      };
+      if (glassInFrame) {
+        sync(liquid.current, resources.liquidMeshes[0]);
+        sync(surface.current, resources.liquidMeshes[1]);
+        ice.current.children.forEach((group, i) =>
+          sync(group.children[0] as THREE.Mesh, resources.iceMeshes[i]),
+        );
+        for (const layer of [resources.liquidScene, resources.iceScene]) {
+          layer.environment = scene.environment;
+          layer.environmentIntensity = scene.environmentIntensity;
+        }
+        // Back-to-front nested transmission, using the existing ping-pong buffers.
+        resources.liquidScene.background = resources.target.texture;
+        gl.setRenderTarget(resources.refracted);
+        gl.render(resources.liquidScene, camera);
+        account();
+        resources.iceScene.background = resources.refracted.texture;
+        gl.setRenderTarget(resources.target);
+        // Keep the opaque scene depth for focus/occlusion; only the glass hull is added below.
+        gl.autoClear = false;
+        gl.render(resources.iceScene, camera);
+        account();
+        gl.autoClear = autoClear;
+        // A depth-only glass hull prevents the background blur from smearing its clear wall.
+        resources.proxy.position.copy(glass.current.position);
+        resources.proxy.position.y += 0.68;
+        gl.autoClear = false;
+        gl.render(resources.proxyScene, camera);
+        account();
+        gl.autoClear = autoClear;
+      }
+      resources.quad.material = resources.copyMaterial;
+      gl.setRenderTarget(resources.refracted);
+      gl.render(resources.screen, resources.camera);
+      account();
+      if (glassInFrame) {
+        resources.wallMesh.geometry = wall.current.geometry;
+        resources.wallMesh.material = wall.current.material;
+        resources.wallMesh.matrix.copy(wall.current.matrixWorld);
+        resources.wallScene.environment = scene.environment;
+        resources.wallScene.environmentIntensity = scene.environmentIntensity;
+        // Controlled wall refraction sees the completed PBR ice/liquid backdrop.
+        // The wall stays separate to avoid losing nested transparent layers.
+        resources.wallScene.background = resources.target.texture;
+        const refraction = (wall.current.material as THREE.Material).userData
+          .refraction;
+        refraction.source.value = resources.target.texture;
+        refraction.pixels.value.set(
+          resources.target.width,
+          resources.target.height,
+        );
+        gl.autoClear = false;
+        gl.render(resources.wallScene, camera);
+        account();
+        gl.autoClear = autoClear;
+      }
+      resources.material.uniforms.focus.value = distance.current;
+      resources.footPoint.copy(glass.current.position).project(camera);
+      resources.edgePoint.copy(glass.current.position);
+      resources.edgePoint.x += 0.54;
+      resources.edgePoint.project(camera);
+      resources.material.uniforms.foot.value.set(
+        resources.footPoint.x * 0.5 + 0.5,
+        resources.footPoint.y * 0.5 + 0.5,
+        Math.abs(resources.edgePoint.x - resources.footPoint.x) * 0.5,
+      );
+      const perspective = camera as THREE.PerspectiveCamera;
+      resources.material.uniforms.near.value = perspective.near;
+      resources.material.uniforms.far.value = perspective.far;
+      resources.quad.material = resources.blurMaterial;
+      resources.blurMaterial.uniforms.source.value =
+        resources.refracted.texture;
+      resources.blurMaterial.uniforms.step.value.set(
+        1 / resources.blurA.width,
+        0,
+      );
+      gl.setRenderTarget(resources.blurA);
+      gl.render(resources.screen, resources.camera);
+      account();
+      resources.blurMaterial.uniforms.source.value = resources.blurA.texture;
+      resources.blurMaterial.uniforms.step.value.set(
+        0,
+        1 / resources.blurA.height,
+      );
+      gl.setRenderTarget(resources.blurB);
+      gl.render(resources.screen, resources.camera);
+      account();
+      resources.quad.material = resources.material;
+      gl.setRenderTarget(previous);
+      gl.render(resources.screen, resources.camera);
+      account();
+      gl.domElement.dataset.drawCalls = String(calls);
+      gl.domElement.dataset.triangles = String(triangles);
+    } finally {
+      wall.current.visible = wallVisible;
+      liquid.current.visible = liquidVisible;
+      surface.current.visible = surfaceVisible;
+      ice.current.visible = iceVisible;
+      gl.autoClear = autoClear;
+      gl.setRenderTarget(previous);
+    }
+  }, 1);
+  return null;
+}

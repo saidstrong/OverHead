@@ -1,0 +1,13 @@
+async(page)=>{
+ const errors=[],states=[];page.on('pageerror',e=>errors.push(e.message));
+ for(const width of [1440,390]){
+  await page.setViewportSize({width,height:width===1440?1000:844});await page.goto('http://localhost:3000');
+  const scene=page.locator('[data-bar-experience]');await scene.evaluate(el=>window.scrollTo({top:el.getBoundingClientRect().top+scrollY-24,behavior:'instant'}));await page.locator('[data-scene-ready="true"]').waitFor({state:'attached'});await page.waitForTimeout(700);
+  for(const [name,t] of [['pour-setup',6.7],['tools-recede',11.2],['rack-start',13.7],['rack-middle',14.5],['rack-end',15.3]]){
+   await scene.evaluate((el,t)=>window.scrollTo({top:el.getBoundingClientRect().top+scrollY-24+(el.offsetHeight-el.firstElementChild.offsetHeight)*t/16,behavior:'instant'}),t);await page.waitForTimeout(800);
+   if(width===1440)await page.locator('.bar-experience').screenshot({path:`output/playwright/stylized/${width}-${name}.png`});else await page.screenshot({path:`output/playwright/stylized/${width}-${name}.png`});
+   states.push({width,name,time:await scene.getAttribute('data-scene-time')});
+  }
+ }
+ return {states,errors};
+}

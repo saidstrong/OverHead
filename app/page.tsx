@@ -2,7 +2,6 @@ import { AtmosphereSection } from '@/components/sections/atmosphere-section';
 import { EventsSection } from '@/components/sections/events-section';
 import { HeroSection } from '@/components/sections/hero-section';
 import { MenuSection } from '@/components/sections/menu-section';
-import { MusicTransition } from '@/components/sections/music-transition';
 import { SignatureDrinksSection } from '@/components/sections/signature-drinks-section';
 import { SiteFooter } from '@/components/sections/site-footer';
 import { TonightSection } from '@/components/sections/tonight-section';
@@ -16,7 +15,6 @@ export default function Home() {
       <HeroSection />
       <TonightSection />
       <SignatureDrinksSection />
-      <MusicTransition />
       <EventsSection />
       <MenuSection />
       <AtmosphereSection />

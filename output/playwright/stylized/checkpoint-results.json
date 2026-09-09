@@ -1,0 +1,776 @@
+[
+  {
+    "states": [
+      {
+        "width": 1440,
+        "name": "initial",
+        "time": "0.00",
+        "overflow": false,
+        "calls": "29",
+        "triangles": "23078"
+      },
+      {
+        "width": 1440,
+        "name": "shake",
+        "time": "3.00",
+        "overflow": false,
+        "calls": "29",
+        "triangles": "23078"
+      },
+      {
+        "width": 1440,
+        "name": "separation",
+        "time": "6.10",
+        "overflow": false,
+        "calls": "29",
+        "triangles": "23078"
+      },
+      {
+        "width": 1440,
+        "name": "pour",
+        "time": "8.70",
+        "overflow": false,
+        "calls": "37",
+        "triangles": "20570"
+      },
+      {
+        "width": 1440,
+        "name": "served",
+        "time": "12.30",
+        "overflow": false,
+        "calls": "26",
+        "triangles": "12114"
+      },
+      {
+        "width": 1440,
+        "name": "music",
+        "time": "16.00",
+        "overflow": false,
+        "calls": "27",
+        "triangles": "12330"
+      },
+      {
+        "width": 375,
+        "name": "initial",
+        "time": "0.00",
+        "overflow": false,
+        "calls": "25",
+        "triangles": "18872"
+      },
+      {
+        "width": 375,
+        "name": "shake",
+        "time": "3.00",
+        "overflow": false,
+        "calls": "25",
+        "triangles": "18872"
+      },
+      {
+        "width": 375,
+        "name": "separation",
+        "time": "6.10",
+        "overflow": false,
+        "calls": "25",
+        "triangles": "18872"
+      },
+      {
+        "width": 375,
+        "name": "pour",
+        "time": "8.70",
+        "overflow": false,
+        "calls": "34",
+        "triangles": "20474"
+      },
+      {
+        "width": 375,
+        "name": "served",
+        "time": "12.30",
+        "overflow": false,
+        "calls": "26",
+        "triangles": "12328"
+      },
+      {
+        "width": 375,
+        "name": "music",
+        "time": "16.00",
+        "overflow": false,
+        "calls": "22",
+        "triangles": "11356"
+      },
+      {
+        "width": 390,
+        "name": "initial",
+        "time": "0.00",
+        "overflow": false,
+        "calls": "25",
+        "triangles": "18872"
+      },
+      {
+        "width": 390,
+        "name": "shake",
+        "time": "3.00",
+        "overflow": false,
+        "calls": "25",
+        "triangles": "18872"
+      },
+      {
+        "width": 390,
+        "name": "separation",
+        "time": "6.10",
+        "overflow": false,
+        "calls": "25",
+        "triangles": "18872"
+      },
+      {
+        "width": 390,
+        "name": "pour",
+        "time": "8.70",
+        "overflow": false,
+        "calls": "35",
+        "triangles": "20490"
+      },
+      {
+        "width": 390,
+        "name": "served",
+        "time": "12.30",
+        "overflow": false,
+        "calls": "26",
+        "triangles": "12328"
+      },
+      {
+        "width": 390,
+        "name": "music",
+        "time": "16.00",
+        "overflow": false,
+        "calls": "22",
+        "triangles": "11356"
+      },
+      {
+        "width": 430,
+        "name": "initial",
+        "time": "0.00",
+        "overflow": false,
+        "calls": "26",
+        "triangles": "18968"
+      },
+      {
+        "width": 430,
+        "name": "shake",
+        "time": "3.00",
+        "overflow": false,
+        "calls": "26",
+        "triangles": "18968"
+      },
+      {
+        "width": 430,
+        "name": "separation",
+        "time": "6.10",
+        "overflow": false,
+        "calls": "26",
+        "triangles": "18968"
+      },
+      {
+        "width": 430,
+        "name": "pour",
+        "time": "8.70",
+        "overflow": false,
+        "calls": "35",
+        "triangles": "20490"
+      },
+      {
+        "width": 430,
+        "name": "served",
+        "time": "12.30",
+        "overflow": false,
+        "calls": "26",
+        "triangles": "12328"
+      },
+      {
+        "width": 430,
+        "name": "music",
+        "time": "16.00",
+        "overflow": false,
+        "calls": "22",
+        "triangles": "11356"
+      }
+    ],
+    "errors": [
+      "THREE.WebGLProgram: Shader Error 0 - VALIDATE_STATUS false\n\nMaterial Name: \nMaterial Type: ShaderMaterial\n\nProgram Info Log: Fragment shader is not compiled.\n\u0000\n\nFRAGMENT\n\nERROR: 0:60: 'drift' : undeclared identifier\n\u0000\n\n  55: \treturn dot( weights, rgb );\n  56: }\n  57: \n  58: varying vec2 vUv;uniform float gain;void main(){\n  59:       float width=mix(.44,.12,vUv.y);\n> 60:       float sway=sin(vUv.y*7.+drift)*.018;\n  61:       float beam=pow(max(0.,1.-abs(vUv.x-(.48+.16*vUv.y+sway))/width),2.);\n  62:       float edge=smoothstep(0.,.25,vUv.y)*(1.-smoothstep(.85,1.,vUv.y));\n  63:       gl_FragColor=vec4(.32,.115,.075,beam*edge*gain);\n  64:     }",
+      "THREE.WebGLProgram: Shader Error 0 - VALIDATE_STATUS false\n\nMaterial Name: \nMaterial Type: ShaderMaterial\n\nProgram Info Log: Fragment shader is not compiled.\n\u0000\n\nFRAGMENT\n\nERROR: 0:60: 'drift' : undeclared identifier\n\u0000\n\n  55: \treturn dot( weights, rgb );\n  56: }\n  57: \n  58: varying vec2 vUv;uniform float gain;void main(){\n  59:       float width=mix(.44,.12,vUv.y);\n> 60:       float sway=sin(vUv.y*7.+drift)*.018;\n  61:       float beam=pow(max(0.,1.-abs(vUv.x-(.48+.16*vUv.y+sway))/width),2.);\n  62:       float edge=smoothstep(0.,.25,vUv.y)*(1.-smoothstep(.85,1.,vUv.y));\n  63:       gl_FragColor=vec4(.32,.115,.075,beam*edge*gain);\n  64:     }",
+      "THREE.WebGLProgram: Shader Error 0 - VALIDATE_STATUS false\n\nMaterial Name: \nMaterial Type: ShaderMaterial\n\nProgram Info Log: Fragment shader is not compiled.\n\u0000\n\nFRAGMENT\n\nERROR: 0:60: 'drift' : undeclared identifier\n\u0000\n\n  55: \treturn dot( weights, rgb );\n  56: }\n  57: \n  58: varying vec2 vUv;uniform float gain;void main(){\n  59:       float width=mix(.44,.12,vUv.y);\n> 60:       float sway=sin(vUv.y*7.+drift)*.018;\n  61:       float beam=pow(max(0.,1.-abs(vUv.x-(.48+.16*vUv.y+sway))/width),2.);\n  62:       float edge=smoothstep(0.,.25,vUv.y)*(1.-smoothstep(.85,1.,vUv.y));\n  63:       gl_FragColor=vec4(.32,.115,.075,beam*edge*gain);\n  64:     }",
+      "THREE.WebGLProgram: Shader Error 0 - VALIDATE_STATUS false\n\nMaterial Name: \nMaterial Type: ShaderMaterial\n\nProgram Info Log: Fragment shader is not compiled.\n\u0000\n\nFRAGMENT\n\nERROR: 0:60: 'drift' : undeclared identifier\n\u0000\n\n  55: \treturn dot( weights, rgb );\n  56: }\n  57: \n  58: varying vec2 vUv;uniform float gain;void main(){\n  59:       float width=mix(.44,.12,vUv.y);\n> 60:       float sway=sin(vUv.y*7.+drift)*.018;\n  61:       float beam=pow(max(0.,1.-abs(vUv.x-(.48+.16*vUv.y+sway))/width),2.);\n  62:       float edge=smoothstep(0.,.25,vUv.y)*(1.-smoothstep(.85,1.,vUv.y));\n  63:       gl_FragColor=vec4(.32,.115,.075,beam*edge*gain);\n  64:     }"
+    ],
+    "warnings": [
+      "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+      "THREE.BufferGeometry.toNonIndexed(): BufferGeometry is already non-indexed.",
+      "THREE.BufferGeometry.toNonIndexed(): BufferGeometry is already non-indexed.",
+      "THREE.BufferGeometry.toNonIndexed(): BufferGeometry is already non-indexed.",
+      "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n\n\n\u0000",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+      "THREE.BufferGeometry.toNonIndexed(): BufferGeometry is already non-indexed.",
+      "THREE.BufferGeometry.toNonIndexed(): BufferGeometry is already non-indexed.",
+      "THREE.BufferGeometry.toNonIndexed(): BufferGeometry is already non-indexed.",
+      "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n\n\n\u0000",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+      "THREE.BufferGeometry.toNonIndexed(): BufferGeometry is already non-indexed.",
+      "THREE.BufferGeometry.toNonIndexed(): BufferGeometry is already non-indexed.",
+      "THREE.BufferGeometry.toNonIndexed(): BufferGeometry is already non-indexed.",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "THREE.Clock: This module has been deprecated. Please use THREE.Timer instead.",
+      "THREE.BufferGeometry.toNonIndexed(): BufferGeometry is already non-indexed.",
+      "THREE.BufferGeometry.toNonIndexed(): BufferGeometry is already non-indexed.",
+      "THREE.BufferGeometry.toNonIndexed(): BufferGeometry is already non-indexed.",
+      "THREE.WebGLProgram: Program Info Log: (210,81-129): warning X4122: sum of 0.996094 and -2.98545e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.49272e-017 cannot be represented accurately in double precision\n(209,37-61): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n(210,82-106): warning X4122: sum of 1 and -1.66644e-018 cannot be represented accurately in double precision\n\n\n\u0000",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid",
+      "WebGL: INVALID_OPERATION: useProgram: program not valid"
+    ]
+  },
+  {
+    "states": [
+      {
+        "width": 1440,
+        "target": 16,
+        "actual": "16.00"
+      },
+      {
+        "width": 1440,
+        "target": 12.3,
+        "actual": "12.31"
+      },
+      {
+        "width": 1440,
+        "target": 8.7,
+        "actual": "8.70"
+      },
+      {
+        "width": 1440,
+        "target": 6.1,
+        "actual": "6.10"
+      },
+      {
+        "width": 1440,
+        "target": 3,
+        "actual": "3.01"
+      },
+      {
+        "width": 1440,
+        "target": 0,
+        "actual": "0.02"
+      },
+      {
+        "width": 375,
+        "target": 16,
+        "actual": "16.00"
+      },
+      {
+        "width": 375,
+        "target": 12.3,
+        "actual": "12.30"
+      },
+      {
+        "width": 375,
+        "target": 8.7,
+        "actual": "8.71"
+      },
+      {
+        "width": 375,
+        "target": 6.1,
+        "actual": "6.12"
+      },
+      {
+        "width": 375,
+        "target": 3,
+        "actual": "3.01"
+      },
+      {
+        "width": 375,
+        "target": 0,
+        "actual": "0.00"
+      },
+      {
+        "width": 390,
+        "target": 16,
+        "actual": "16.00"
+      },
+      {
+        "width": 390,
+        "target": 12.3,
+        "actual": "12.30"
+      },
+      {
+        "width": 390,
+        "target": 8.7,
+        "actual": "8.71"
+      },
+      {
+        "width": 390,
+        "target": 6.1,
+        "actual": "6.10"
+      },
+      {
+        "width": 390,
+        "target": 3,
+        "actual": "3.01"
+      },
+      {
+        "width": 390,
+        "target": 0,
+        "actual": "0.01"
+      },
+      {
+        "width": 430,
+        "target": 16,
+        "actual": "15.98"
+      },
+      {
+        "width": 430,
+        "target": 12.3,
+        "actual": "12.32"
+      },
+      {
+        "width": 430,
+        "target": 8.7,
+        "actual": "8.71"
+      },
+      {
+        "width": 430,
+        "target": 6.1,
+        "actual": "6.12"
+      },
+      {
+        "width": 430,
+        "target": 3,
+        "actual": "3.02"
+      },
+      {
+        "width": 430,
+        "target": 0,
+        "actual": "0.02"
+      }
+    ],
+    "reduced": [
+      {
+        "width": 1440,
+        "time": "12.30",
+        "reduced": "true",
+        "height": 781,
+        "panel": 781,
+        "overflow": false
+      },
+      {
+        "width": 375,
+        "time": "12.30",
+        "reduced": "true",
+        "height": 739,
+        "panel": 739,
+        "overflow": false
+      },
+      {
+        "width": 390,
+        "time": "12.30",
+        "reduced": "true",
+        "height": 739,
+        "panel": 739,
+        "overflow": false
+      },
+      {
+        "width": 430,
+        "time": "12.30",
+        "reduced": "true",
+        "height": 739,
+        "panel": 739,
+        "overflow": false
+      }
+    ],
+    "errors": []
+  },
+  {
+    "deferred": true,
+    "idleBefore": {
+      "time": "8.70",
+      "reduced": "false",
+      "height": 3545,
+      "panel": 739,
+      "canvas": {
+        "engine": "three.js r185",
+        "renderFrame": "79",
+        "sceneTime": "8.70",
+        "drawCalls": "35",
+        "triangles": "20490"
+      },
+      "overflow": false
+    },
+    "idleAfter": {
+      "time": "8.70",
+      "reduced": "false",
+      "height": 3545,
+      "panel": 739,
+      "canvas": {
+        "engine": "three.js r185",
+        "renderFrame": "79",
+        "sceneTime": "8.70",
+        "drawCalls": "35",
+        "triangles": "20490"
+      },
+      "overflow": false
+    },
+    "reverse": {
+      "time": "0.00",
+      "reduced": "false",
+      "height": 3545,
+      "panel": 739,
+      "canvas": {
+        "engine": "three.js r185",
+        "renderFrame": "123",
+        "sceneTime": "0.00",
+        "drawCalls": "25",
+        "triangles": "18872"
+      },
+      "overflow": false
+    },
+    "offBefore": {
+      "time": "0.00",
+      "reduced": "false",
+      "height": 3545,
+      "panel": 739,
+      "canvas": {
+        "engine": "three.js r185",
+        "renderFrame": "127",
+        "sceneTime": "0.00",
+        "drawCalls": "25",
+        "triangles": "18872"
+      },
+      "overflow": false
+    },
+    "offAfter": {
+      "time": "0.00",
+      "reduced": "false",
+      "height": 3545,
+      "panel": 739,
+      "canvas": {
+        "engine": "three.js r185",
+        "renderFrame": "127",
+        "sceneTime": "0.00",
+        "drawCalls": "25",
+        "triangles": "18872"
+      },
+      "overflow": false
+    },
+    "reducedBefore": {
+      "time": "12.30",
+      "reduced": "true",
+      "height": 739,
+      "panel": 739,
+      "canvas": {
+        "engine": "three.js r185",
+        "renderFrame": "135",
+        "sceneTime": "12.30",
+        "drawCalls": "37",
+        "triangles": "26730"
+      },
+      "overflow": false
+    },
+    "reducedAfter": {
+      "time": "12.30",
+      "reduced": "true",
+      "height": 739,
+      "panel": 739,
+      "canvas": {
+        "engine": "three.js r185",
+        "renderFrame": "139",
+        "sceneTime": "12.30",
+        "drawCalls": "37",
+        "triangles": "26730"
+      },
+      "overflow": false
+    },
+    "performanceSample": {
+      "frames": 145,
+      "elapsed": 2400.3000000022366,
+      "medianMs": 16.69999999999709,
+      "p95Ms": 16.899999999997817
+    },
+    "short": {
+      "time": "8.70",
+      "reduced": "false",
+      "height": 2801,
+      "panel": 562,
+      "canvas": {
+        "engine": "three.js r185",
+        "renderFrame": "607",
+        "sceneTime": "8.70",
+        "drawCalls": "35",
+        "triangles": "20490"
+      },
+      "overflow": false
+    },
+    "fallback": {
+      "failed": "true",
+      "canvas": false,
+      "svg": true,
+      "height": 562,
+      "panel": 562
+    },
+    "errors": [
+      "THREE.WebGLProgram: Shader Error 0 - VALIDATE_STATUS false\n\nMaterial Name: \nMaterial Type: ShaderMaterial\n\nProgram Info Log: Fragment shader is not compiled.\n\u0000\n\nFRAGMENT\n\nERROR: 0:60: 'drift' : undeclared identifier\n\u0000\n\n  55: \treturn dot( weights, rgb );\n  56: }\n  57: \n  58: varying vec2 vUv;uniform float gain;void main(){\n  59:       float width=mix(.44,.12,vUv.y);\n> 60:       float sway=sin(vUv.y*7.+drift)*.018;\n  61:       float beam=pow(max(0.,1.-abs(vUv.x-(.48+.16*vUv.y+sway))/width),2.);\n  62:       float edge=smoothstep(0.,.25,vUv.y)*(1.-smoothstep(.85,1.,vUv.y));\n  63:       gl_FragColor=vec4(.32,.115,.075,beam*edge*gain);\n  64:     }"
+    ]
+  },
+  {
+    "time": "8.70",
+    "overflow": false,
+    "overlay": 0,
+    "errors": []
+  }
+]

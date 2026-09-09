@@ -1,0 +1,16 @@
+async(page)=>{
+ const errors=[],warnings=[],states=[];
+ page.on('pageerror',e=>errors.push(e.message));page.on('console',m=>{if(m.type()==='error')errors.push(m.text());if(m.type()==='warning')warnings.push(m.text());});
+ for(const width of [1440,375,390,430]){
+  await page.setViewportSize({width,height:width===1440?1000:844});await page.goto('http://localhost:3000');
+  const scene=page.locator('[data-bar-experience]');await scene.evaluate(el=>window.scrollTo({top:el.getBoundingClientRect().top+scrollY-24,behavior:'instant'}));
+  await page.locator('[data-scene-ready="true"]').waitFor({state:'attached',timeout:30000});await page.evaluate(()=>document.fonts.ready);await page.waitForTimeout(700);
+  for(const [name,t] of [['initial',0],['shake',3],['separation',6.1],['pour',8.7],['served',12.3],['music',16]]){
+   await scene.evaluate((el,t)=>window.scrollTo({top:el.getBoundingClientRect().top+scrollY-24+(el.offsetHeight-el.firstElementChild.offsetHeight)*t/16,behavior:'instant'}),t);await page.waitForFunction(t=>Math.abs(Number(document.querySelector('[data-bar-experience]').dataset.sceneTime)-t)<.025,t,{timeout:10000});await page.waitForTimeout(150);
+   if(width===1440)await page.locator('.bar-experience').screenshot({path:`output/playwright/stylized/${width}-${name}.png`});
+   else await page.screenshot({path:`output/playwright/stylized/${width}-${name}.png`});
+   states.push({width,name,...await scene.evaluate(el=>({time:el.dataset.sceneTime,canvas:{...el.querySelector('canvas')?.dataset},overflow:document.documentElement.scrollWidth>innerWidth}))});
+  }
+ }
+ return {states:states.map(({width,name,time,overflow,canvas})=>({width,name,time,overflow,calls:canvas.drawCalls,triangles:canvas.triangles})),errors,warnings};
+}

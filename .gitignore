@@ -36,3 +36,9 @@ next-env.d.ts
 /.wrangler/
 /outputs/
 /work/
+
+# Local browser sessions, compiler cache and generated QA scratch.
+# Selected checkpoint evidence under output is explicitly versioned.
+/.playwright-cli/
+/output/
+*.tsbuildinfo
