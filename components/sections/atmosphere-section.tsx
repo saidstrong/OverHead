@@ -16,7 +16,7 @@ export function AtmosphereSection() {
           заканчивать.
         </p>
         <ActionLink href={links.instagram} external variant="dark">
-          Жизнь OVERHEAD
+          АТМОСФЕРА OVERHEAD
         </ActionLink>
       </div>
       <figure className="room-artwork" data-reveal>

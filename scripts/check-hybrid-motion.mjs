@@ -18,13 +18,25 @@ same('stream path and timing',section(a,'    const streamAmount =','    key.curr
 same('fill timing',section(a,'    const fill =','    liquid.current.scale'),section(b,'    const fill =','    // The receiving'));
 same('camera/static framing',section(a,'    const cam =','    // Inspectable'),section(b,'    const cam =','    // Same camera'));
 const control='components/scene/bar-experience.tsx';
-// Owner-requested full-bleed/textless shell: remove only caption/progress bookkeeping
-// and the old card's 24px top inset. All seek/tween/cleanup logic stays protected.
+// Owner-requested shell changes may remove caption/progress bookkeeping, use the
+// full-bleed top inset, and add the exact mobile-nav lifecycle below. All
+// seek/tween/cleanup logic stays protected.
 const textlessController = section(baseline(control),'  useEffect(() => {\n    const element','\n  return (')
   .replace('    let lastChapter = -1;\n', '')
   .replace(/      if \(progress.current\)[\s\S]*?        setChapter\(next\);\n      \}\n/, '')
   .replace("start: 'top top+=24'", "start: 'top top'");
-same('GSAP controller except removed UI and top inset',textlessController,section(read(control),'  useEffect(() => {\n    const element','\n  return ('));
+const currentController = section(read(control),'  useEffect(() => {\n    const element','\n  return (');
+assert.match(currentController,/let ritualActive: boolean \| null = null;/);
+assert.match(currentController,/onToggle: \(trigger\) => setRitualPresentation\(trigger\.isActive\),/);
+assert.match(currentController,/onRefresh: \(trigger\) => setRitualPresentation\(trigger\.isActive\),/);
+const controllerWithoutMobileNav = currentController
+  .replace(/    let ritualActive: boolean \| null = null;[\s\S]*?    if \(reduced\) \{\n      setRitualPresentation\(false\);\n/, '    if (reduced) {\n')
+  .replace(/      return \(\) => \{\n        cancelAnimationFrame\(refreshId\);\n        setRitualPresentation\(false, false\);\n      \};\n    \}\n    gsap/, '      return;\n    }\n    gsap')
+  .replace('        onToggle: (trigger) => setRitualPresentation(trigger.isActive),\n', '')
+  .replace('        onRefresh: (trigger) => setRitualPresentation(trigger.isActive),\n', '')
+  .replace('      cancelAnimationFrame(refreshId);\n', '')
+  .replace('      setRitualPresentation(false, false);\n', '');
+same('GSAP controller except approved textless, full-bleed and mobile-nav lifecycle changes',textlessController,controllerWithoutMobileNav);
 same('accepted hybrid renderer',execFileSync('git',['show','fef25b7:components/scene/bar-canvas.tsx'],{encoding:'utf8'}),b);
 assert(!/GLTFLoader|FocusPass|<Stage|assets\.(glass|frozen|peel)/.test(b));
 assert(b.includes('frameloop="demand"'));

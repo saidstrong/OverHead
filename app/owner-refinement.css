@@ -31,6 +31,10 @@ body > #quick-actions {
   border-top: 1px solid #393632;
   padding: 0 env(safe-area-inset-right, 0px) env(safe-area-inset-bottom, 0px)
     env(safe-area-inset-left, 0px);
+  transition:
+    opacity 220ms ease,
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
 }
 body > #quick-actions a {
   min-height: 61px;
@@ -246,6 +250,11 @@ body > #quick-actions a {
   body > #quick-actions {
     display: grid;
   }
+  body > #quick-actions[data-ritual-active='true'] {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(100%);
+  }
   .hero {
     min-height: calc(100svh - var(--mobile-nav-height));
     padding: 20px 20px 44px;
@@ -259,7 +268,7 @@ body > #quick-actions a {
   }
   .hero .hero-brand-art {
     order: -1;
-    width: clamp(144px, 42vw, 200px);
+    width: clamp(108px, 30vw, 144px);
     margin: 24px auto 0;
   }
   .hero .hero-copy {
@@ -374,5 +383,11 @@ body > #quick-actions a {
     min-height: 150px;
     padding: 32px 20px;
     gap: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body > #quick-actions {
+    transition: none;
   }
 }

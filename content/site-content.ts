@@ -44,7 +44,7 @@ export const copy = {
   },
   drinks: {
     eyebrow: 'ФИРМЕННЫЕ КОКТЕЙЛИ',
-    title: 'У БАРА ЕСТЬ СВОЁ ЗВУЧАНИЕ.',
+    title: 'У БАРА СВОЙ ЗВУК.',
     body: 'Motörhead, Nirvana, Oasis, The Beatles. Любимые имена — по другую сторону барной стойки.',
   },
   events: {

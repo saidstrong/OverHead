@@ -79,3 +79,12 @@
   opacity: 1;
   pointer-events: auto;
 }
+
+@media (max-width: 820px) {
+  /* The active ritual owns the visual viewport; the fixed nav is restored by
+     ScrollTrigger as soon as the sticky scene is left in either direction. */
+  .bar-scroll[data-ritual-active='true'] .bar-experience__viewport {
+    height: 100svh;
+    height: 100dvh;
+  }
+}

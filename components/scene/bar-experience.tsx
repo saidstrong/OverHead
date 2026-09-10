@@ -84,10 +84,32 @@ export function BarExperience() {
   useEffect(() => {
     const element = container.current;
     if (!ready || !element) return;
+    let ritualActive: boolean | null = null;
+    let refreshId = 0;
+    const setRitualPresentation = (active: boolean, refresh = true) => {
+      const mobile = window.matchMedia('(max-width: 820px)').matches;
+      const nextActive = active && mobile;
+      if (ritualActive === nextActive) return;
+      ritualActive = nextActive;
+      element.dataset.ritualActive = String(nextActive);
+      document
+        .getElementById('quick-actions')
+        ?.setAttribute('data-ritual-active', String(nextActive));
+      // The active mobile scene gains the navigation's former viewport space.
+      // Refresh after the CSS transition state is applied so the trigger's end
+      // remains derived from the actual sticky panel height.
+      if (refresh) {
+        refreshId = requestAnimationFrame(() => ScrollTrigger.refresh());
+      }
+    };
     if (reduced) {
+      setRitualPresentation(false);
       seek.current?.(12.3, true);
       element.dataset.sceneTime = '12.30';
-      return;
+      return () => {
+        cancelAnimationFrame(refreshId);
+        setRitualPresentation(false, false);
+      };
     }
     gsap.registerPlugin(ScrollTrigger);
     const clock = { time: 0 };
@@ -106,6 +128,8 @@ export function BarExperience() {
           `+=${element.offsetHeight - (element.firstElementChild as HTMLElement).offsetHeight}`,
         scrub: 0.35,
         invalidateOnRefresh: true,
+        onToggle: (trigger) => setRitualPresentation(trigger.isActive),
+        onRefresh: (trigger) => setRitualPresentation(trigger.isActive),
       },
       onUpdate: render,
     });
@@ -116,9 +140,11 @@ export function BarExperience() {
     const refresh = requestAnimationFrame(() => ScrollTrigger.refresh());
     return () => {
       cancelAnimationFrame(refresh);
+      cancelAnimationFrame(refreshId);
       document.removeEventListener('visibilitychange', visibility);
       tween.scrollTrigger?.kill();
       tween.kill();
+      setRitualPresentation(false, false);
     };
   }, [ready, reduced]);
 
