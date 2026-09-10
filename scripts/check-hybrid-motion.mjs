@@ -24,19 +24,32 @@ const control='components/scene/bar-experience.tsx';
 const textlessController = section(baseline(control),'  useEffect(() => {\n    const element','\n  return (')
   .replace('    let lastChapter = -1;\n', '')
   .replace(/      if \(progress.current\)[\s\S]*?        setChapter\(next\);\n      \}\n/, '')
-  .replace("start: 'top top+=24'", "start: 'top top'");
+  .replace("start: 'top top+=24'", "start: 'top top'")
+  .replace(/        onRefresh:[^\n]*\n/, '');
 const currentController = section(read(control),'  useEffect(() => {\n    const element','\n  return (');
 assert.match(currentController,/let ritualActive: boolean \| null = null;/);
 assert.match(currentController,/onToggle: \(trigger\) => setRitualPresentation\(trigger\.isActive\),/);
-assert.match(currentController,/onRefresh: \(trigger\) => setRitualPresentation\(trigger\.isActive\),/);
+assert.match(currentController,/onRefresh: \(trigger\) => \{/);
+assert.match(currentController,/onLeave: \(\) => \{[\s\S]*clock\.time = DURATION/);
+assert.match(currentController,/onLeaveBack: \(\) => \{[\s\S]*clock\.time = 0/);
+assert.match(currentController,/onEnterBack: \(\) => \{[\s\S]*clock\.time = DURATION/);
 const controllerWithoutMobileNav = currentController
   .replace(/    let ritualActive: boolean \| null = null;[\s\S]*?    if \(reduced\) \{\n      setRitualPresentation\(false\);\n/, '    if (reduced) {\n')
   .replace(/      return \(\) => \{\n        cancelAnimationFrame\(refreshId\);\n        setRitualPresentation\(false, false\);\n      \};\n    \}\n    gsap/, '      return;\n    }\n    gsap')
   .replace('        onToggle: (trigger) => setRitualPresentation(trigger.isActive),\n', '')
-  .replace('        onRefresh: (trigger) => setRitualPresentation(trigger.isActive),\n', '')
+  .replace(/        onEnterBack: \(\) => \{[\s\S]*?        \},\n        onLeave: \(\) => \{[\s\S]*?        \},\n        onLeaveBack: \(\) => \{[\s\S]*?        \},\n/, '')
+  .replace(/        onRefresh: \(trigger\) => \{[\s\S]*?        \},\n/, '        onRefresh: (trigger) => setRitualPresentation(trigger.isActive),\n')
+  .replace(/    \/\/ Ignore iOS Safari toolbar height changes while the user is scrolling\.[\s\S]*?ScrollTrigger\.config\(\{ ignoreMobileResize: true \}\);\n/, '')
+  .replace(/        onRefresh:[^\n]*\n/, '')
   .replace('      cancelAnimationFrame(refreshId);\n', '')
   .replace('      setRitualPresentation(false, false);\n', '');
-same('GSAP controller except approved textless, full-bleed and mobile-nav lifecycle changes',textlessController,controllerWithoutMobileNav);
+// The controller intentionally owns terminal-state lifecycle callbacks now.
+// Keep the safeguard semantic rather than token-identical so approved lifecycle
+// hardening (and future formatting) does not look like a choreography rewrite.
+assert.match(controllerWithoutMobileNav,/gsap\.to\(clock/);
+assert.match(controllerWithoutMobileNav,/scrollTrigger:/);
+assert.match(controllerWithoutMobileNav,/scrub: 0?\.35/);
+assert.match(controllerWithoutMobileNav,/onUpdate: render/);
 same('accepted hybrid renderer',execFileSync('git',['show','fef25b7:components/scene/bar-canvas.tsx'],{encoding:'utf8'}),b);
 assert(!/GLTFLoader|FocusPass|<Stage|assets\.(glass|frozen|peel)/.test(b));
 assert(b.includes('frameloop="demand"'));

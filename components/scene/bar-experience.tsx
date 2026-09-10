@@ -12,8 +12,6 @@ import {
 import type { ReactNode } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { ArrowDown } from 'lucide-react';
-import { SceneFallback } from './scene-fallback';
 import { HybridLayers } from './hybrid-layers';
 import './bar-experience.css';
 
@@ -112,6 +110,9 @@ export function BarExperience() {
       };
     }
     gsap.registerPlugin(ScrollTrigger);
+    // Ignore iOS Safari toolbar height changes while the user is scrolling.
+    // Orientation changes and explicit refreshes still recalculate normally.
+    ScrollTrigger.config({ ignoreMobileResize: true });
     const clock = { time: 0 };
     const render = () => {
       // No wall-clock playback: this value is driven exclusively by scroll.
@@ -128,8 +129,30 @@ export function BarExperience() {
           `+=${element.offsetHeight - (element.firstElementChild as HTMLElement).offsetHeight}`,
         scrub: 0.35,
         invalidateOnRefresh: true,
+        onEnterBack: () => {
+          // Re-entering from below starts on the terminal stage frame, then
+          // scrubs backward naturally instead of flashing the shaker.
+          clock.time = DURATION;
+          render();
+        },
+        onLeave: () => {
+          // Keep the stage rendered while the sticky scene unpins.
+          clock.time = DURATION;
+          render();
+        },
+        onLeaveBack: () => {
+          // It is safe to reset only after the scene has fully left above.
+          clock.time = 0;
+          render();
+        },
         onToggle: (trigger) => setRitualPresentation(trigger.isActive),
-        onRefresh: (trigger) => setRitualPresentation(trigger.isActive),
+        onRefresh: (trigger) => {
+          setRitualPresentation(trigger.isActive);
+          if (trigger.progress >= 0.999) {
+            clock.time = DURATION;
+            render();
+          }
+        },
       },
       onUpdate: render,
     });
@@ -159,24 +182,10 @@ export function BarExperience() {
       data-scene-failed={failed}
     >
       <div className="bar-experience">
-        <a
-          className="ritual-skip"
-          href="#events"
-          aria-label="Перейти к событиям, пропустив анимацию"
-          onClick={(event) => {
-            event.preventDefault();
-            const target = document.getElementById('events');
-            target?.scrollIntoView({ behavior: 'instant', block: 'start' });
-            target?.focus({ preventScroll: true });
-          }}
-        >
-          <ArrowDown aria-hidden="true" size={22} />
-        </a>
         <figure
           className="bar-experience__viewport"
           aria-label="При прокрутке стальной шейкер встряхивается, разделяется и наливает янтарный коктейль. Готовый напиток сменяется видом живой сцены."
         >
-          {(!ready || failed) && <SceneFallback />}
           {near && !failed && (
             <HybridLayers
               composite={composite}
